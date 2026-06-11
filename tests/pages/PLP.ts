@@ -23,23 +23,6 @@ export class PLP {
     readonly reinitialiser: Locator;
 
 
-    //Elements page PLP footer
-    readonly footerTechHub: Locator;
-    readonly footerProduits: Locator;
-    readonly footerEntreprise: Locator;
-    readonly footerSupport: Locator;
-    readonly footerLegal: Locator;
-
-
-    //Elements page PLP Header
-    readonly headerAccueil: Locator;
-    readonly headerProduits: Locator;
-    readonly headerApropos: Locator;
-    readonly headerContact: Locator;
-    readonly headerSearch: Locator;
-    readonly headerCart: Locator;
-    readonly headerLogin: Locator;
-
     
     //Le constructeur initialise les éléments // Localiser les éléments
     constructor(page: Page) {
@@ -57,22 +40,7 @@ export class PLP {
         this.affichageGrille = page.locator('div').filter({ hasText: /^Filtres12 produitsNouveautésPopularitéPrix croissantPrix décroissant$/ }).getByRole('button').nth(1);
         this.affichageListe = page.locator('div').filter({ hasText: /^Filtres12 produitsNouveautésPopularitéPrix croissantPrix décroissant$/ }).getByRole('button').nth(2);
         this.reinitialiser = page.getByRole('button', { name: 'Réinitialiser' });
-        
-        //Elements page PLP Footer
-        this.footerTechHub = page.getByRole('contentinfo').getByRole('link', { name: 'TechHub', exact: true });
-        this.footerProduits = page.getByRole('heading', { name: 'Produits', exact: true });
-        this.footerEntreprise = page.getByRole('heading', { name: 'Entreprise' });
-        this.footerSupport = page.getByRole('heading', { name: 'Support' });
-        this.footerLegal = page.getByRole('heading', { name: 'Légal' });
 
-        //Elements page PLP Header
-        this.headerAccueil = page.getByTestId('nav-link-home');
-        this.headerProduits = page.getByTestId('nav-link-products');
-        this.headerApropos = page.getByTestId('nav-link-about');
-        this.headerContact = page.getByTestId('nav-link-contact');
-        this.headerSearch = page.getByTestId('search-button');
-        this.headerCart = page.getByTestId('cart-button');
-        this.headerLogin = page.getByTestId('login-button');
 
     }
 
@@ -86,19 +54,6 @@ export class PLP {
         this.listeTri,
         this.affichageGrille,
         this.affichageListe,
-        this.footerTechHub,
-        this.footerProduits,
-        this.footerEntreprise,
-        this.footerLegal,
-        this.footerProduits,
-        this.footerSupport,
-        this.headerAccueil,
-        this.headerApropos,
-        this.headerProduits,
-        this.headerContact,
-        this.headerSearch,
-        this.headerCart,
-        this.headerLogin,
     ]   ;
 }
 
@@ -146,7 +101,5 @@ export class PLP {
     //verifier que les produits affichés en premier son les nouveautés
     //TODO
     }
-
-
 
     }
