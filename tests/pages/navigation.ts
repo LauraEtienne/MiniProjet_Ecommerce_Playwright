@@ -24,6 +24,9 @@ export class Navigation {
     readonly headerSearch: Locator;
     readonly headerCart: Locator;
     readonly headerLogin: Locator;
+    //Affiché si utilisateur authentifié:
+    readonly monCompte: Locator;
+
 
     
     //Le constructeur initialise les éléments // Localiser les éléments
@@ -46,6 +49,9 @@ export class Navigation {
         this.headerSearch = page.getByTestId('search-button');
         this.headerCart = page.getByTestId('cart-button');
         this.headerLogin = page.getByTestId('login-button');
+        //Affiché si utilisateur authentifié:
+        this.monCompte = page.getByTestId('account-link');
+
 
     }
 
@@ -75,6 +81,21 @@ export class Navigation {
     await lien.click();  
     //on vérifie la bonne redirection
     await expect (this.page).toHaveURL(urlAttendue);
+    }
+
+//L'utilisateur authentifié accède à son compte après avoir été redirigé sur la page d'acceuil
+    async cliquerSurMonCompte() {
+    //on clic sur l'îcone de login dans le header
+    await this.headerLogin.click();
+    //on clic sur mon compte
+    await this.monCompte.click();  
+        
+    }
+
+//L'utilisateur non authentifié accède veut s'authentifier
+    async cliquerSurLogin() {
+    //on clic sur l'îcone de login dans le header
+    await this.headerLogin.click();        
     }
 
 }
