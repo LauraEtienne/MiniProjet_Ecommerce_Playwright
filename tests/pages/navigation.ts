@@ -69,4 +69,12 @@ export class Navigation {
     ]   ;
 }
 
+//Vérifier que le lien est fonctionnel - l'URL sera à spécifier dans le fichier de test
+    async cliquersurLienetVérifierFonctionnel(lien: Locator, urlAttendue: RegExp) {
+    //on clic sur le lien
+    await lien.click();  
+    //on vérifie la bonne redirection
+    await expect (this.page).toHaveURL(urlAttendue);
+    }
+
 }
