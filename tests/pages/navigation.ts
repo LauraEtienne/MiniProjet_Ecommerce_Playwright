@@ -26,6 +26,7 @@ export class Navigation {
     readonly headerLogin: Locator;
     //Affiché si utilisateur authentifié:
     readonly monCompte: Locator;
+    readonly deconnexion: Locator;
 
 
     
@@ -51,6 +52,7 @@ export class Navigation {
         this.headerLogin = page.getByTestId('login-button');
         //Affiché si utilisateur authentifié:
         this.monCompte = page.getByTestId('account-link');
+        this.deconnexion = page.getByTestId('logout-button');
 
 
     }
@@ -92,10 +94,20 @@ export class Navigation {
         
     }
 
-//L'utilisateur non authentifié accède veut s'authentifier
+//L'utilisateur non authentifié veut s'authentifier
     async cliquerSurLogin() {
     //on clic sur l'îcone de login dans le header
     await this.headerLogin.click();        
     }
 
-}
+
+//L'utilisateur veut se deconnecter
+    async seDeconnecterAPartirDuHeader() {
+    //on clic sur l'îcone de login dans le header
+    await this.headerLogin.click();
+    //on clic sur mon compte
+    await this.deconnexion.click();  
+        
+    }
+
+   }
