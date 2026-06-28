@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 //import { fakerFR as faker } from '@faker-js/faker';
 
 // Définir l'objet Page et les éléments (majuscule)
-export class Acceuil {
+export class Accueil {
     //page
     readonly page: Page;
     //Sections et header et footer
