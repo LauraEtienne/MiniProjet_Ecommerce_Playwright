@@ -27,6 +27,7 @@ export class Navigation {
     //Affiché si utilisateur authentifié:
     readonly monCompte: Locator;
     readonly deconnexion: Locator;
+    readonly userMenu: Locator; //  On le déclare ici
 
 
     
@@ -49,10 +50,11 @@ export class Navigation {
         this.headerContact = page.getByTestId('nav-link-contact');
         this.headerSearch = page.getByTestId('search-button');
         this.headerCart = page.getByTestId('cart-button');
-        this.headerLogin = page.getByTestId('login-button');
+        this.headerLogin = page.getByTestId('login-button'); // Pour l'état Déconnecté
         //Affiché si utilisateur authentifié:
-        this.monCompte = page.getByTestId('account-link');
+        this.monCompte = page.getByTestId('account-link'); // Le lien à l'intérieur du menu
         this.deconnexion = page.getByTestId('logout-button');
+        this.userMenu = page.getByTestId('user-menu-button');
 
 
     }
@@ -86,11 +88,13 @@ export class Navigation {
     }
 
 //L'utilisateur authentifié accède à son compte après avoir été redirigé sur la page d'acceuil
-    async cliquerSurMonCompte() {
-    //on clic sur l'îcone de login dans le header
-    await this.headerLogin.click();
-    //on clic sur mon compte
-    await this.monCompte.click();  
+    async cliquerSurMonCompte(){   
+    // 1. On attend qu'il soit bien visible à l'écran après l'inscription
+    await this.userMenu.waitFor({ state: 'visible' });
+    // 2. On clique sur l'icône de profil pour ouvrir le menu déroulant
+    await this.userMenu.click();
+    // 3. On clique sur le lien "Mon compte" à l'intérieur du menu
+    await this.monCompte.click();
         
     }
 
