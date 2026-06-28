@@ -25,7 +25,10 @@ test('authentification avec succès', async ({ page, navigation, authentificatio
   await expect (comptePage.valeurNomComplet).toContainText(users.authentifie.nom);
   await expect (comptePage.valeurEmail).toContainText(users.authentifie.email, {ignoreCase:true});
 
-  //déconnexion pour revenir à l'état initial -- Deconnexion non fonctionnelle
-  //await navigation.deconnexion.click();
-
+  //déconnexion pour revenir à l'état initial 
+  await comptePage.btnDeconnexion.click();
+  //attendre redirection vers page accueil
+  await page.waitForURL('https://shop.missionplaywright.fr/');  
+  //On s'assure que le bouton "Login" est de nouveau visible
+  await expect(navigation.headerLogin).toBeVisible();
 });
