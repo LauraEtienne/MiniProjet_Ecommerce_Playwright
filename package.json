@@ -2,7 +2,10 @@
   "name": "mini-projet-e-commerce",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

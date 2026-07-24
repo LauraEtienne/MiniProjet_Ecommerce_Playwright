@@ -2,79 +2,72 @@ import { Page, Locator } from '@playwright/test';
 import { test, expect } from '@playwright/test';
 //import { fakerFR as faker } from '@faker-js/faker';
 
-// Définir l'objet Page et les éléments (majuscule)
+// Define the Page object and elements (capitalized)
 export class PDP {
     //page
     readonly page: Page;
     //Elements page PDP
-    readonly titreProduit: Locator;
-    readonly categorieProduit: Locator;
-    readonly avisProduit: Locator;
-    readonly prixProduit: Locator;
-    readonly descriptionProduit: Locator;
-    readonly caracteristiquesProduit: Locator;
-    readonly stockProduit: Locator;
-    readonly ctaAjouterProduit: Locator;
-    readonly ctaFavoriProduit: Locator;
-    readonly ctaPartagerProduit: Locator;
-    readonly servicesProduit: Locator;
-    readonly sectionAvis: Locator;
-    readonly sectionProduitsSimilaires: Locator;
+    readonly productTitle: Locator;
+    readonly productCategory: Locator;
+    readonly productReviews: Locator;
+    readonly productPrice: Locator;
+    readonly productDescription: Locator;
+    readonly productFeatures: Locator;
+    readonly productStock: Locator;
+    readonly addToCartButton: Locator;
+    readonly whishListButton: Locator;
+    readonly shareProductButton: Locator;
+    readonly productServices: Locator;
+    readonly reviewsSection: Locator;
+    readonly similarProductsSection: Locator;
     readonly image: Locator;
-    readonly retourCatalogue: Locator;
-
-
-
-
-
+    readonly backToCatalogLink: Locator;
 
     
-    //Le constructeur initialise les éléments // Localiser les éléments
+    //The constructor initializes the elements // Locate the elements
     constructor(page: Page) {
         //Page
         this.page = page;
 
         //Elements page PDP
-        this.titreProduit = page.locator('h1');
-        this.categorieProduit = page.locator('p.text-primary.uppercase'); //balise.class.class 
-        this.avisProduit = page.locator('div.flex.items-center.gap-3.mb-6').filter({ hasText: 'avis' });
-        this.prixProduit = page.locator('div.flex.items-baseline.gap-4.mb-6').locator('span.text-4xl.font-bold');
-        this.descriptionProduit = page.locator('text-muted-foreground.mb-8');
-        this.caracteristiquesProduit = page.getByRole('heading', {name : 'Caractéristiques'});
-        this.stockProduit = page.locator('p.text-sm.font-medium.flex.items-center.gap-2.text-primary').filter({ hasText: 'stock'});
-        this.ctaAjouterProduit = page.getByTestId('product-detail-add-to-cart');
-        this.ctaFavoriProduit = page.getByTestId('product-detail-wishlist-button');
-        this.ctaPartagerProduit = page.getByTestId('product-detail-share-button');
-        this.servicesProduit = page.locator('div.grid.grid-cols-3.gap-4.p-4.bg-muted/50.rounded-2xl');
-        this.sectionAvis = page.getByRole('heading', {name:'Avis clients' });
-        this.sectionProduitsSimilaires = page.getByRole('heading', {name: 'Produits similaires'});
+        this.productTitle = page.locator('h1');
+        this.productCategory = page.locator('p.text-primary.uppercase'); //balise.class.class 
+        this.productReviews = page.locator('div.flex.items-center.gap-3.mb-6').filter({ hasText: 'avis' });
+        this.productPrice = page.locator('div.flex.items-baseline.gap-4.mb-6').locator('span.text-4xl.font-bold');
+        this.productDescription = page.locator('text-muted-foreground.mb-8');
+        this.productFeatures = page.getByRole('heading', {name : 'Caractéristiques'});
+        this.productStock = page.locator('p.text-sm.font-medium.flex.items-center.gap-2.text-primary').filter({ hasText: 'stock'});
+        this.addToCartButton = page.getByTestId('product-detail-add-to-cart');
+        this.whishListButton = page.getByTestId('product-detail-wishlist-button');
+        this.shareProductButton = page.getByTestId('product-detail-share-button');
+        this.productServices = page.locator('div.grid.grid-cols-3.gap-4.p-4.bg-muted/50.rounded-2xl');
+        this.reviewsSection = page.getByRole('heading', {name:'Avis clients' });
+        this.similarProductsSection = page.getByRole('heading', {name: 'Produits similaires'});
         this.image = page.locator('img.object-cover'); // generaliser
-        this.retourCatalogue = page.getByRole('link', {name: 'Retour au catalogue'});
-
+        this.backToCatalogLink = page.getByRole('link', {name: 'Retour au catalogue'});
 
     }
 
-    //méthodes
-    // Récupérer toutes les élémets pour en vérifier l'affichage et que la PLP s'affiche sans erreur dans le fichier de test
-    getTousLesEléments () {
+    //methods
+    //Retrieve all elements to verify their display and ensure that the PLP is displayed without errors in the test file
+    getAllElements () {
     return [
-        this.titreProduit,
-        this.categorieProduit,
-        this.avisProduit,
-        this.prixProduit,
-        this.descriptionProduit,
-        this.caracteristiquesProduit,
-        this.stockProduit,
-        this.ctaAjouterProduit,
-        this.ctaFavoriProduit,
-        this.ctaPartagerProduit,
-        this.servicesProduit,
-        this.sectionAvis,
-        this.sectionProduitsSimilaires,
+        this.productTitle,
+        this.productCategory,
+        this.productReviews,
+        this.productPrice,
+        this.productDescription,
+        this.productFeatures,
+        this.productStock,
+        this.addToCartButton,
+        this.whishListButton,
+        this.shareProductButton,
+        this.productServices,
+        this.reviewsSection,
+        this.similarProductsSection,
         this.image,
-
-    ]   ;
+    ]
+    ;
 }
-
-    
+  
 }

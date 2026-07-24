@@ -7,37 +7,38 @@ test.beforeEach(async ({ page }) => {
 
 });
 
-test('inscription', async ({ page, navigation, authentificationPage, comptePage  }) => {
+test('inscription', async ({ page, browsing, authentificationPage, accountPage  }) => {
   const fakeUser = {
-      nom: faker.person.fullName(),
+      name: faker.person.fullName(),
       email: faker.internet.email(),
       password: faker.internet.password({ length: 12 }),
     };
 
 
-  //aller sur page insciption
-  await navigation.cliquerSurLogin();
-  //aller sur inscription
-  await authentificationPage.boutonInscription.click();
-  //saisir et soumettre formulaire inscription
-  await authentificationPage.soumettreFormulaireInscription(fakeUser.nom, fakeUser.email, fakeUser.password, fakeUser.password);
-  //attendre redirection vers page accueil
+  //Go to the auth page from the header
+  await browsing.loginHeader.click();
+
+  //Click on the Sign Up Button
+  await authentificationPage.signUpTab.click();
+  //Fill out and submit the registration form
+  await authentificationPage.submitInscriptionForm(fakeUser.name, fakeUser.email, fakeUser.password, fakeUser.password);
+  //Wait for redirection to the home page
   await page.waitForURL('https://shop.missionplaywright.fr/');  
-  //vérifier que l'inscription est enregistrée en vérifiant accès mon compte
-  await navigation.cliquerSurMonCompte();
-  //cliquer sur profil
-  await comptePage.tabProfil.click();
-  //patienter pour que les données soient affichées
-  await expect (comptePage.titreInformationsPersonnelles).toBeVisible();
+  //Verify that your registration has been processed by checking "My Account"
+  await browsing.clickMyAccountAfterAuthentication();
+  //Click on "Profile"
+  await accountPage.profileTab.click();
+  //Please wait for the data to load
+  await expect (accountPage.personalDataTitle).toBeVisible();
 
-  //vérifier que les données saisies sont affichées
-  await page.reload(); //rechargement de la page car le nom n'est pas affiché juste après la création
-  await expect (comptePage.valeurNomComplet).toContainText(fakeUser.nom);
-  await expect (comptePage.valeurEmail).toContainText(fakeUser.email, {ignoreCase:true});
+  //Verify that the entered data is displayed
+  await page.reload(); //Reload the page because the name isn't displayed immediately after creation
+  await expect (accountPage.fullNameValue).toContainText(fakeUser.name);
+  await expect (accountPage.emailValue).toContainText(fakeUser.email, {ignoreCase:true});
 
-  //Supprimer le compte
-  //Cliquer sur Parametres
-  //await comptePage.tabParametres.click(); 
-  //Cliquer sur Supprimer compte -- SUPPRIMER COMPTE N'EST PAS IMPLEMENTE
-  //await comptePage.btnSupprimerCompte.click();
+  //Delete the account
+  //Click Settings
+  //await accountPage.tabSettings.click(); 
+  //Click Delete Account -- DELETE ACCOUNT IS NOT IMPLEMENTED
+  //await accountPage.btnDeleteAccount.click();
 })

@@ -2,121 +2,121 @@ import { Page, Locator } from '@playwright/test';
 import { test, expect } from '@playwright/test';
 //import { fakerFR as faker } from '@faker-js/faker';
 
-// Définir l'objet Page et les éléments (majuscule)
+// Define the Page object and elements (uppercase)
 export class Checkout {
     //page
     readonly page: Page;
     // Page1
-    readonly titreLivraison: Locator;
-    readonly editionPrenom: Locator;
-    readonly editionNom: Locator;
-    readonly editionEmail: Locator;
-    readonly editionTelephone: Locator;
-    readonly editionAdresse: Locator;
-    readonly editionVille: Locator;
-    readonly editionCodePostal: Locator;
-    readonly btnContinuerVersPaiment: Locator;
+    readonly deliveryTitle: Locator;
+    readonly firstnameEdit: Locator;
+    readonly nameEdit: Locator;
+    readonly emailEdit: Locator;
+    readonly phoneEdit: Locator;
+    readonly addressEdit: Locator;
+    readonly cityEdit: Locator;
+    readonly postalCodeEdit: Locator;
+    readonly goToPaymentButton: Locator;
 
     // Page2
-    readonly titrePaiement: Locator;
-    readonly editionNumeroCarte: Locator;
-    readonly editionNomCarte: Locator;
-    readonly editionDateExpiration: Locator;
-    readonly editionCVV: Locator;
-    readonly btnSoumettrePaiment: Locator;
+    readonly paymentTitle: Locator;
+    readonly cardNumberEdit: Locator;
+    readonly cardNameEdit: Locator;
+    readonly expirationDateEdit: Locator;
+    readonly cvvEdit: Locator;
+    readonly submitButton: Locator;
     readonly totalAmountLabel: Locator;
 
     // Page3
-    readonly titreConfirmation: Locator;
-    readonly messageSucces: Locator;
-    readonly confirmationCard: Locator;
-    readonly btnSuivreMaCommande: Locator;
-    readonly btnContinuerMesAchats: Locator;
-    readonly numeroCommande: Locator;
+    readonly confirmationTitle: Locator;
+    readonly successMessage: Locator;
+    readonly cardConfirmation: Locator;
+    readonly trackOrderButton: Locator;
+    readonly continueShoppingButton: Locator;
+    readonly orderNumber: Locator;
 
 
 
-    //Le constructeur initialise les éléments // Localiser les éléments
+    //The constructor initializes the elements // Locate the elements
     constructor(page: Page) {
         // Page1
         this.page = page;
-        this.titreLivraison = page.getByRole('heading', { name: 'Adresse de livraison' });
-        this.editionPrenom = page.getByTestId('shipping-firstname-input');
-        this.editionNom = page.getByTestId('shipping-lastname-input');
-        this.editionEmail = page.getByTestId('shipping-email-input');
-        this.editionTelephone = page.getByTestId('shipping-phone-input');
-        this.editionAdresse = page.getByTestId('shipping-address-input');
-        this.editionVille = page.getByTestId('shipping-city-input');
-        this.editionCodePostal = page.getByTestId('shipping-postalcode-input');
-        this.btnContinuerVersPaiment = page.getByTestId('shipping-submit-button');
+        this.deliveryTitle = page.getByRole('heading', { name: 'Adresse de livraison' });
+        this.firstnameEdit = page.getByTestId('shipping-firstname-input');
+        this.nameEdit = page.getByTestId('shipping-lastname-input');
+        this.emailEdit = page.getByTestId('shipping-email-input');
+        this.phoneEdit = page.getByTestId('shipping-phone-input');
+        this.addressEdit = page.getByTestId('shipping-address-input');
+        this.cityEdit = page.getByTestId('shipping-city-input');
+        this.postalCodeEdit = page.getByTestId('shipping-postalcode-input');
+        this.goToPaymentButton = page.getByTestId('shipping-submit-button');
         // Page2
-        this.titrePaiement = page.getByTestId('cart-count');
-        this.editionNumeroCarte = page.getByTestId('payment-cardnumber-input');
-        this.editionNomCarte = page.getByTestId('clear-cart-button');
-        this.editionDateExpiration = page.getByTestId('checkout-button');
-        this.editionCVV = page.getByTestId('continue-shopping-button');
-        this.btnSoumettrePaiment = page.getByTestId('payment-submit-button');
+        this.paymentTitle = page.getByTestId('cart-count');
+        this.cardNumberEdit = page.getByTestId('payment-cardnumber-input');
+        this.cardNameEdit = page.getByTestId('clear-cart-button');
+        this.expirationDateEdit = page.getByTestId('checkout-button');
+        this.cvvEdit = page.getByTestId('continue-shopping-button');
+        this.submitButton = page.getByTestId('payment-submit-button');
         this.totalAmountLabel = page.locator('span.text-2xl.font-bold');
         // Page3
-        this.titreConfirmation = page.getByRole('heading', { name: 'Commande confirmée !' });
-        this.messageSucces = page.getByText('Merci pour votre commande.');
-        this.confirmationCard = page.getByTestId('order-confirmation-card');
-        this.btnSuivreMaCommande = page.getByTestId('track-order-button');
-        this.btnContinuerMesAchats = page.getByTestId('continue-shopping-button');
-        this.numeroCommande = page.getByTestId('order-number');
+        this.confirmationTitle = page.getByRole('heading', { name: 'Commande confirmée !' });
+        this.successMessage = page.getByText('Merci pour votre commande.');
+        this.cardConfirmation = page.getByTestId('order-confirmation-card');
+        this.trackOrderButton = page.getByTestId('track-order-button');
+        this.continueShoppingButton = page.getByTestId('continue-shopping-button');
+        this.orderNumber = page.getByTestId('order-number');
 
     }
 
-    //méthodes TODO
-    // Saisir les données de la page Livraison et passer au paiement
-    async soumettreDonneesLivraison(prenom: string, nom: string, email: string, telephone: string, adresse: string, ville: string, codepostal: string) {
-        await this.editionPrenom.fill(prenom),
-        await this.editionNom.fill(nom),
-        await this.editionEmail.fill(email),
-        await this.editionTelephone.fill(telephone),
-        await this.editionAdresse.fill(adresse),
-        await this.editionVille.fill(ville),
-        await this.editionCodePostal.fill(codepostal),
-        await this.btnContinuerVersPaiment.click()
+    //methods
+    // Enter the details on the Delivery page and proceed to payment.
+    async submitDeliveryData(prenom: string, nom: string, email: string, telephone: string, adresse: string, ville: string, codepostal: string) {
+        await this.firstnameEdit.fill(prenom),
+        await this.nameEdit.fill(nom),
+        await this.emailEdit.fill(email),
+        await this.phoneEdit.fill(telephone),
+        await this.addressEdit.fill(adresse),
+        await this.cityEdit.fill(ville),
+        await this.postalCodeEdit.fill(codepostal),
+        await this.goToPaymentButton.click()
 }
 
-    // Saisir les données de la page paiement et cliquer sur le CTA Payer
-    async soumettreDonneesPaiement(numCarte: string, nomcarte: string, dateExp: string, CVV: string) {
-        await this.editionNumeroCarte.fill(numCarte),
-        await this.editionNomCarte.fill(nomcarte),
-        await this.editionDateExpiration.fill(dateExp),
-        await this.editionCVV.fill(CVV),
-        await this.btnSoumettrePaiment.click()
+    // Enter the details on the payment page and click the "Pay" button.
+    async submitPaymentData(numCarte: string, nomcarte: string, dateExp: string, CVV: string) {
+        await this.cardNumberEdit.fill(numCarte),
+        await this.cardNameEdit.fill(nomcarte),
+        await this.expirationDateEdit.fill(dateExp),
+        await this.cvvEdit.fill(CVV),
+        await this.submitButton.click()
 
     }
 
-    // Retourner le montant total à payer pour test de vérification
-    async retournerMontantAPayer () : Promise<string> {
+    // Return the total amount payable for the verification test.
+    async getAmountToPay () : Promise<string> {
         const text = await this.totalAmountLabel.textContent();
-       //Si text contient bien une chaîne de caractères (vrai), alors remplace les retours à la ligne et les espaces multiples par un seul espace propre
-       // Sinon (si text est null ou undefined), alors renvoie une chaîne vide ''.        
+       // If text contains a string (true), replace line breaks and multiple spaces with a single clean space
+       // Otherwise (if text is null or undefined), return an empty string ''.     
        return text ? text.replace(/\s+/g, ' ').trim() : ''; 
-       // Résultat propre : "149.99 €"
+       // Clean result: "149.99 €"
 
     }
 
-    // Retourner le numéro de commande
-    async retournenmeroCommandxe() : Promise<string>  {
-       const text = await this.numeroCommande.textContent();
-       //Si text contient bien une chaîne de caractères (vrai), alors remplace les retours à la ligne et les espaces multiples par un seul espace propre
-       // Sinon (si text est null ou undefined), alors renvoie une chaîne vide ''.
+    // Return the order number
+    async getOrderNumber() : Promise<string>  {
+       const text = await this.orderNumber.textContent();
+       // If text contains a string (true), replace line breaks and multiple spaces with a single clean space
+       // Otherwise (if text is null or undefined), return an empty string ''.
        return text ? text.replace(/\s+/g, ' ').trim() : ''; 
 
     }
-    // Suivre ma commande
-    async suivreCommande():Promise<void> {
-        await this.btnSuivreMaCommande.click();
+    // Track my order
+    async trackMyOrder():Promise<void> {
+        await this.trackOrderButton.click();
 
     }
 
-    // Continuer mes achats
-    async continuerMesAchats():Promise<void> {
-        await this.btnContinuerMesAchats.click();
+    // Continue shopping
+    async continueShopping():Promise<void> {
+        await this.continueShoppingButton.click();
 
     }
 
