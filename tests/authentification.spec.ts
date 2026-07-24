@@ -9,7 +9,7 @@ test('successful authentication', async ({ page, browsing, authentificationPage,
   
   //Go to the auth page from the header
   await browsing.loginHeader.click();
-  
+
   //Fill out and submit the login form
   await authentificationPage.submitConnexionForm(users.authentifie.email,users.authentifie.password);
 
@@ -24,7 +24,7 @@ test('successful authentication', async ({ page, browsing, authentificationPage,
   //Please wait for the data to load
   await expect (accountPage.personalDataTitle).toBeVisible();
   //Check to see if my account information is displayed
-  await expect (accountPage.fullNameValue).toContainText(users.authentifie.nom);
+  await expect (accountPage.fullNameValue).toContainText(users.authentifie.lastname);
   await expect (accountPage.emailValue).toContainText(users.authentifie.email, {ignoreCase:true});
 
   //Disconnect to return to the initial state 

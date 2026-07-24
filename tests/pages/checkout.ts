@@ -52,9 +52,9 @@ export class Checkout {
         // Page2
         this.paymentTitle = page.getByTestId('cart-count');
         this.cardNumberEdit = page.getByTestId('payment-cardnumber-input');
-        this.cardNameEdit = page.getByTestId('clear-cart-button');
-        this.expirationDateEdit = page.getByTestId('checkout-button');
-        this.cvvEdit = page.getByTestId('continue-shopping-button');
+        this.cardNameEdit = page.getByTestId('payment-cardname-input');
+        this.expirationDateEdit = page.getByTestId('payment-expiry-input');
+        this.cvvEdit = page.getByTestId('payment-cvv-input');
         this.submitButton = page.getByTestId('payment-submit-button');
         this.totalAmountLabel = page.locator('span.text-2xl.font-bold');
         // Page3
@@ -69,22 +69,22 @@ export class Checkout {
 
     //methods
     // Enter the details on the Delivery page and proceed to payment.
-    async submitDeliveryData(prenom: string, nom: string, email: string, telephone: string, adresse: string, ville: string, codepostal: string) {
-        await this.firstnameEdit.fill(prenom),
-        await this.nameEdit.fill(nom),
+    async submitDeliveryData(firstname: string, name: string, email: string, phone: string, address: string, city: string, postalCode: string) {
+        await this.firstnameEdit.fill(firstname),
+        await this.nameEdit.fill(name),
         await this.emailEdit.fill(email),
-        await this.phoneEdit.fill(telephone),
-        await this.addressEdit.fill(adresse),
-        await this.cityEdit.fill(ville),
-        await this.postalCodeEdit.fill(codepostal),
+        await this.phoneEdit.fill(phone),
+        await this.addressEdit.fill(address),
+        await this.cityEdit.fill(city),
+        await this.postalCodeEdit.fill(postalCode),
         await this.goToPaymentButton.click()
 }
 
     // Enter the details on the payment page and click the "Pay" button.
-    async submitPaymentData(numCarte: string, nomcarte: string, dateExp: string, CVV: string) {
-        await this.cardNumberEdit.fill(numCarte),
-        await this.cardNameEdit.fill(nomcarte),
-        await this.expirationDateEdit.fill(dateExp),
+    async submitPaymentData(cardNumber: string, cardName: string, expirationDate: string, CVV: string) {
+        await this.cardNumberEdit.fill(cardNumber),
+        await this.cardNameEdit.fill(cardName),
+        await this.expirationDateEdit.fill(expirationDate),
         await this.cvvEdit.fill(CVV),
         await this.submitButton.click()
 

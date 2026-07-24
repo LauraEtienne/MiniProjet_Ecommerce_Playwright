@@ -70,9 +70,9 @@ export class PLP {
     }
 
     //Click on a product and check that the product page appears 
-    async clickProductLinkAndCheckItWorks(link: Locator, expectedURL: RegExp) {
+    async clickProductLinkAndCheckItWorks(product: Locator, expectedURL: RegExp) {
     //Click on the link
-    await link.click();  
+    await product.click();  
     //Verify that the redirect is working properly
     await expect (this.page).toHaveURL(expectedURL);
     }
