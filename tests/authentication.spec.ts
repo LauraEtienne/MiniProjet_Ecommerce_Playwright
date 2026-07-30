@@ -2,10 +2,10 @@ import { test, expect } from './fixture';
 import users from '../tests/data/users.json'; //import du fichier
 
 test.beforeEach(async ({ page }) => {
-        await page.goto('https://shop.missionplaywright.fr/');
+        await page.goto(process.env.URL!);
 });
 
-test('successful authentication', async ({ page, browsing, authentificationPage,accountPage }) => {
+test('successful authentication', async ({ page, browsing, authenticationPage: authentificationPage,accountPage }) => {
   
   //Go to the auth page from the header
   await browsing.loginHeader.click();
@@ -24,7 +24,7 @@ test('successful authentication', async ({ page, browsing, authentificationPage,
   //Please wait for the data to load
   await expect (accountPage.personalDataTitle).toBeVisible();
   //Check to see if my account information is displayed
-  await expect (accountPage.fullNameValue).toContainText(users.authentifie.lastname);
+  await expect (accountPage.fullNameValue).toContainText(users.authentifie.lastName);
   await expect (accountPage.emailValue).toContainText(users.authentifie.email, {ignoreCase:true});
 
   //Disconnect to return to the initial state 

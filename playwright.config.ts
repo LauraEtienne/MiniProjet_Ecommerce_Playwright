@@ -1,4 +1,10 @@
 import { defineConfig, devices } from '@playwright/test';
+import dotenv from 'dotenv';
+
+//Load the .env file first
+  dotenv.config({
+    path: `env/.env.${process.env.ENV|| 'local'}`,
+  })
 
 /**
  * Read environment variables from file.
@@ -76,4 +82,8 @@ export default defineConfig({
   //   url: 'http://localhost:3000',
   //   reuseExistingServer: !process.env.CI,
   // },
+
+ 
+
+
 });
