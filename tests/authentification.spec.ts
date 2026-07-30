@@ -5,30 +5,32 @@ test.beforeEach(async ({ page }) => {
         await page.goto('https://shop.missionplaywright.fr/');
 });
 
-test('authentification avec succès', async ({ page, navigation, authentificationPage,comptePage }) => {
-  //Aller sur page de connexion
-  await navigation.headerLogin.click();
-  //Saisir et soumettre formulaire de connexion
-  await authentificationPage.soumettreFormulaireConnexion(users.authentifie.email,users.authentifie.password);
+test('successful authentication', async ({ page, browsing, authentificationPage,accountPage }) => {
+  
+  //Go to the auth page from the header
+  await browsing.loginHeader.click();
+  
+  //Fill out and submit the login form
+  await authentificationPage.submitConnexionForm(users.authentifie.email,users.authentifie.password);
 
-  //verifier page accueil
-  //attendre redirection vers page accueil
+  //Check the home page
+  //Wait for redirection to the home page
   await page.waitForURL('https://shop.missionplaywright.fr/');  
 
-  //Accéder à mon compte pour vérifier que je suis bien connectée
-  await navigation.cliquerSurMonCompte();
-  //cliquer sur profil
-  await comptePage.tabProfil.click();
-  //patienter pour que les données soient affichées
-  await expect (comptePage.titreInformationsPersonnelles).toBeVisible();
-  //vérifier que les données de mon compte sont affichées
-  await expect (comptePage.valeurNomComplet).toContainText(users.authentifie.nom);
-  await expect (comptePage.valeurEmail).toContainText(users.authentifie.email, {ignoreCase:true});
+  //Go to My Account to make sure I'm logged in
+  await browsing.clickMyAccountAfterAuthentication();
+  //Click on "Profile"
+  await accountPage.profileTab.click();
+  //Please wait for the data to load
+  await expect (accountPage.personalDataTitle).toBeVisible();
+  //Check to see if my account information is displayed
+  await expect (accountPage.fullNameValue).toContainText(users.authentifie.nom);
+  await expect (accountPage.emailValue).toContainText(users.authentifie.email, {ignoreCase:true});
 
-  //déconnexion pour revenir à l'état initial 
-  await comptePage.btnDeconnexion.click();
-  //attendre redirection vers page accueil
+  //Disconnect to return to the initial state 
+  await accountPage.logoutButton.click();
+  //Wait for redirection to the home page
   await page.waitForURL('https://shop.missionplaywright.fr/');  
-  //On s'assure que le bouton "Login" est de nouveau visible
-  await expect(navigation.headerLogin).toBeVisible();
+  //We make sure that the "Login" button is visible again
+  await expect(browsing.loginHeader).toBeVisible();
 });

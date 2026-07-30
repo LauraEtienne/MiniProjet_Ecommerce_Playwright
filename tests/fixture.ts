@@ -1,112 +1,110 @@
-//1-IMPORT DES CLASSES DU PROJET, A PARTIR DE LEURS FICHIERS RESPECTIFS
-// "dans le dossier pages qui est juste à côté de toi", on utilise un seul point suivi d'un slash : ./
+//1-IMPORT PROJECT CLASSES FROM THEIR RESPECTIVE FILES
+// "In the 'pages' folder right next to you," you use a single period followed by a slash: ./
 import { test as base } from '@playwright/test';
-import { Accueil } from './pages/accueil';
-import { APropos } from './pages/aPropos';
-import { Authentification } from './pages/authentification';
+import { Home } from './pages/home';
+import { About } from './pages/about';
+import { Authentication } from './pages/authentication';
 import { Checkout } from './pages/checkout';
-import { Compte } from './pages/compte';
+import { Account } from './pages/account';
 import { Contact } from './pages/contact';
-import { Navigation } from './pages/navigation';
-import { Panier } from './pages/panier';
+import { Cart } from './pages/cart';
 import { PDP } from './pages/pdp';
 import { PLP } from './pages/plp';
+import { Browsing } from './pages/browsing';
 
 
-//2-CREATION DU GRAND OBJET FIXTURE ET DE SES PROPRIETES QUI CORRESPONDENT AUX CLASSES DES POMS
-//On liste tous les objets (Page Objects) que l'on veut rendre disponibles dans nos tests.
+//2-CREATION OF THE MAIN FIXTURE OBJECT AND ITS PROPERTIES THAT CORRESPOND TO THE POMS CLASSES
+//We list all the objects (Page Objects) that we want to make available in our tests
 type MyFixtures = {
-    accueilPage: Accueil;
-    aproposPage: APropos;
-    authentificationPage: Authentification;
+    homePage: Home;
+    aboutPage: About;
+    authentificationPage: Authentication;
     checkoutPage: Checkout;
-    comptePage: Compte;
+    accountPage: Account;
     contactPage: Contact;
-    navigation: Navigation;
-    panierPage: Panier;
+    browsing: Browsing;
+    cartPage: Cart;
     pdpPage: PDP;
     plpPage: PLP;
 
 }
 
-//3- EXPORTATION DU TEST ÉTENDU COMPRENANT L'INSTANCIATION DES OBJETS SPÉCIFIQUES AU PROJET
+//3- EXPORTING THE EXTENDED TEST, INCLUDING THE INSTANTIATION OF PROJECT-SPECIFIC OBJECTS
 export const test = base.extend<MyFixtures>({
-//propriété appelée dans le fichier de test , en minuscules, et créées à l'étape 2   
-accueilPage: async ({page}, use)=> {
-    //instanciation: l'instance (minuscule) est l'objet créé à partir de la Classe (majuscule), importée à l'étape 1 et issue des POM
-    //l'instance est éphèmère et locale
-    const accueil = new Accueil(page);
-    //L'instance est inhectée dans la propriété qui sera utilisée dans le test
+//property names listed in the test file, in lowercase, and created in Step 2   
+homePage: async ({page}, use)=> {
+    //instantiation: An instance (lowercase) is the object created from the Class (uppercase), imported in step 1 and derived from the POMs
+    //The instance is temporary and local
+    const accueil = new Home(page);
+    //The instance is injected into the property that will be used in the test
     await use(accueil);
 },
 
-aproposPage: async ({page}, use)=> {
-    //instanciation
-    const apropos = new APropos(page);
-    //L'instance est inhectée dans la propriété qui sera utilisée dans le test
+aboutPage: async ({page}, use)=> {
+    //instantiation
+    const apropos = new About(page);
+    //The instance is injected into the property that will be used in the test
     await use(apropos);
 },
 
 authentificationPage: async ({page}, use)=> {
-    //instanciation
-    const auth = new Authentification(page);
-    //L'instance est inhectée dans la propriété qui sera utilisée dans le test
+    //instantiation
+    const auth = new Authentication(page);
+    //The instance is injected into the property that will be used in the test
     await use(auth);
 },
 
 checkoutPage: async ({page}, use)=> {
-    //instanciation
+    //instantiation
     const checkout = new Checkout(page);
-    //L'instance est inhectée dans la propriété qui sera utilisée dans le test
+    //The instance is injected into the property that will be used in the test
     await use(checkout);
 },
 
-comptePage: async ({page}, use)=> {
-    //instanciation
-    const compte = new Compte(page);
-    //L'instance est inhectée dans la propriété qui sera utilisée dans le test
+accountPage: async ({page}, use)=> {
+    //instantiation
+    const compte = new Account(page);
+    //The instance is injected into the property that will be used in the test
     await use(compte);
 },
 
 contactPage: async ({page}, use)=> {
-    //instanciation
+    //instantiation
     const contact = new Contact(page);
-    //L'instance est inhectée dans la propriété qui sera utilisée dans le test
+    //The instance is injected into the property that will be used in the test
     await use(contact);
 },
 
-navigation: async ({page}, use)=> {
-    //instanciation
-    const nav = new Navigation(page);
-    //L'instance est inhectée dans la propriété qui sera utilisée dans le test
+browsing: async ({page}, use)=> {
+    //instantiation
+    const nav = new Browsing(page);
+    //The instance is injected into the property that will be used in the test
     await use(nav);
 },
 
-panierPage: async ({page}, use)=> {
-    //instanciation
-    const panier = new Panier(page);
-    //L'instance est inhectée dans la propriété qui sera utilisée dans le test
+cartPage: async ({page}, use)=> {
+    //instantiation
+    const panier = new Cart(page);
+    //The instance is injected into the property that will be used in the test
     await use(panier);
 },
 
 pdpPage: async ({page}, use)=> {
-    //instanciation
+    //instantiation
     const pdp = new PDP(page);
-    //L'instance est inhectée dans la propriété qui sera utilisée dans le test
+    //The instance is injected into the property that will be used in the test
     await use(pdp);
 },
 
 plpPage: async ({page}, use)=> {
-    //instanciation
+    //instantiation
     const plp = new PLP(page);
-    //L'instance est inhectée dans la propriété qui sera utilisée dans le test
+    //The instance is injected into the property that will be used in the test
     await use(plp);
 }
-
-
 
 })
 
 
-//4-On ré-exporte "expect" pour ne pas avoir à l'importer depuis @playwright/test ailleurs
+//4-We re-export "expect" so we don't have to import it from @playwright/test elsewhere
 export { expect } from '@playwright/test';

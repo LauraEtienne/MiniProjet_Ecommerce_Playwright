@@ -2,127 +2,127 @@ import { Page, Locator } from '@playwright/test';
 import { test, expect } from '@playwright/test';
 //import { fakerFR as faker } from '@faker-js/faker';
 
-// Définir l'objet Page et les éléments (majuscule)
+// Define the Page object and the elements 
 export class Contact {
     //page
     readonly page: Page;
     //Elements page Contact
-    readonly titrePage: Locator;
-    readonly sectionEnvoyezMessage: Locator;
-    readonly sectionInformations: Locator;
-    readonly sectionQuestionsFrequentes: Locator;
+    readonly pageTitle: Locator;
+    readonly sendMessageSection: Locator;
+    readonly informationSection: Locator;
+    readonly questionsSection: Locator;
     //Section EnvoyezMessage
-    readonly nomComplet: Locator;
-    readonly email: Locator;
-    readonly sujet: Locator;
-    readonly message: Locator;
-    readonly CTAEnvoyerMessage: Locator;
+    readonly fullNameTextbox: Locator;
+    readonly emailTextbox: Locator;
+    readonly subjectTextbox: Locator;
+    readonly messageTextbox: Locator;
+    readonly sendMessageButton: Locator;
     //Section Informations
-    readonly emailinfo: Locator;
-    readonly telephone: Locator;
-    readonly adresse: Locator;
+    readonly emailLink: Locator;
+    readonly phoneLink: Locator;
+    readonly address: Locator;
     readonly supportClient: Locator;
     //Section Questions Fréquentes
-    readonly questionDelai: Locator;
-    readonly reponseDelai: Locator;
-    readonly questionRetourProduit: Locator;
-    readonly reponseRetourProduit: Locator;
-    readonly questionGarantie: Locator;
-    readonly reponseGarantie: Locator;
-    readonly questionPaiement: Locator;
-    readonly reponsePaiement: Locator;
+    readonly delayQuestion: Locator;
+    readonly delayAnswer: Locator;
+    readonly productReturnQuestion: Locator;
+    readonly productReturnAnswer: Locator;
+    readonly warrantyQuestion: Locator;
+    readonly warrantyAnswer: Locator;
+    readonly paymentQuestion: Locator;
+    readonly paymentAnswer: Locator;
 
 
-    //Le constructeur initialise les éléments // Localiser les éléments
+    //The constructor initializes the elements // Locate the elements
     constructor(page: Page) {
         //Page
         this.page = page;
 
         //Elements page Contact
-        this.titrePage = page.getByRole('heading', { name: 'Nous Contacter' });
-        this.sectionEnvoyezMessage = page.getByRole('heading', { name: 'Envoyez-nous un message' });
-        this.sectionInformations = page.getByRole('heading', { name: 'Informations' });
-        this.sectionQuestionsFrequentes = page.getByRole('heading', { name: 'Questions fréquentes' });
+        this.pageTitle = page.getByRole('heading', { name: 'Nous Contacter' });
+        this.sendMessageSection = page.getByRole('heading', { name: 'Envoyez-nous un message' });
+        this.informationSection = page.getByRole('heading', { name: 'Informations' });
+        this.questionsSection = page.getByRole('heading', { name: 'Questions fréquentes' });
         //Section EnvoyezMessage
-        this.nomComplet = page.getByRole('textbox', { name: 'Nom complet' });
-        this.email = page.getByRole('textbox', { name: 'Email' });
-        this.sujet = page.getByRole('textbox', { name: 'Sujet' });
-        this.message = page.getByRole('textbox', { name: 'Message' });
-        this.CTAEnvoyerMessage = page.getByRole('button', { name: 'Envoyer le message' });
+        this.fullNameTextbox = page.getByRole('textbox', { name: 'Nom complet' });
+        this.emailTextbox = page.getByRole('textbox', { name: 'Email' });
+        this.subjectTextbox = page.getByRole('textbox', { name: 'Sujet' });
+        this.messageTextbox = page.getByRole('textbox', { name: 'Message' });
+        this.sendMessageButton = page.getByRole('button', { name: 'Envoyer le message' });
         //Section Informations
-        this.emailinfo = page.getByRole('link', { name: 'Email contact@techhub.fr' });
-        this.telephone = page.getByRole('link', { name: 'Téléphone 01 23 45 67' });
-        this.adresse = page.getByText('Adresse');
+        this.emailLink = page.getByRole('link', { name: 'Email contact@techhub.fr' });
+        this.phoneLink = page.getByRole('link', { name: 'Téléphone 01 23 45 67' });
+        this.address = page.getByText('Adresse');
         this.supportClient = page.getByText('Support Client');
         //Section Questions Fréquentes
-        this.questionDelai = page.getByRole('button', { name: 'Quels sont les délais de' });
-        this.reponseDelai = page.getByText('La livraison standard prend 2');
-        this.questionRetourProduit = page.getByRole('button', { name: 'Comment retourner un produit ?' });
-        this.reponseRetourProduit = page.getByText('Vous disposez de 30 jours');
-        this.questionGarantie = page.getByRole('button', { name: 'Les produits sont-ils' });
-        this.reponseGarantie = page.getByText('Tous nos produits bénéficient');
-        this.questionPaiement = page.getByRole('button', { name: 'Quels modes de paiement' });
-        this.reponsePaiement = page.getByText('Nous acceptons les cartes');
+        this.delayQuestion = page.getByRole('button', { name: 'Quels sont les délais de' });
+        this.delayAnswer = page.getByText('La livraison standard prend 2');
+        this.productReturnQuestion = page.getByRole('button', { name: 'Comment retourner un produit ?' });
+        this.productReturnAnswer = page.getByText('Vous disposez de 30 jours');
+        this.warrantyQuestion = page.getByRole('button', { name: 'Les produits sont-ils' });
+        this.warrantyAnswer = page.getByText('Tous nos produits bénéficient');
+        this.paymentQuestion = page.getByRole('button', { name: 'Quels modes de paiement' });
+        this.paymentAnswer = page.getByText('Nous acceptons les cartes');
 
     }
 
-    //méthodes
-    // Récupérer toutes les élémets pour en vérifier l'affichage dans le test 
-    getToutesLesSectionsetlesInformationsSansInteractions() {
+    //methods
+    // Retrieve all elements to verify their display in the test. 
+    getAllSectionsandInfo() {
         return [
-            this.titrePage,
-            this.sectionEnvoyezMessage,
-            this.sectionInformations,
-            this.sectionQuestionsFrequentes,
-            this.adresse,
+            this.pageTitle,
+            this.sendMessageSection,
+            this.informationSection,
+            this.questionsSection,
+            this.address,
             this.supportClient,
 
         ];
     }
 
-    async envoyerMessage(nomComplet: string, email: string, sujet: string, message: string) {
-        await this.nomComplet.fill(nomComplet);
-        await this.nomComplet.fill(email);
-        await this.nomComplet.fill(sujet);
-        await this.nomComplet.fill(message);
+    async sendMessage(fullName: string, email: string, subject: string, message: string) {
+        await this.fullNameTextbox.fill(fullName);
+        await this.fullNameTextbox.fill(email);
+        await this.fullNameTextbox.fill(subject);
+        await this.fullNameTextbox.fill(message);
 
-        await this.CTAEnvoyerMessage.click();
+        await this.sendMessageButton.click();
     }
 
-    //    clickerEmailContact => à faire dans fichier de test, pas de méthode nécessaire ici?
-    //    clickerTéléphoneContact => à faire dans fichier test, pas de méthode nécessaire ici?
+    //    clickerEmailContact => to be done in the test file; no method needed here?
+    //    clickerTéléphoneContact => to be done in the test file; no method needed here?
 
-    async consulterFAQDelai() {
-        //je clic sur un titroir
-        await this.questionDelai.click();
-        //je retroune la réponse pour en vérifier la visibilité dans le test
-        const responseDelai = this.reponseDelai;
-        return responseDelai;
+    async viewDelayFAQ() {
+        //I click on a drawer
+        await this.delayQuestion.click();
+        //I return the response to verify its visibility in the test
+        const delayAnswer = this.delayAnswer;
+        return delayAnswer;
     }
 
 
-    async consulterFAQRetourProduit() {
-        //je clic sur un titroir
-        await this.questionRetourProduit.click();
-        //je retroune la réponse pour en vérifier la visibilité dans le test
-        const responseRetourProduit = this.reponseRetourProduit;
-        return responseRetourProduit;
+    async viewProductReturnFAQ() {
+        //I click on a drawer
+        await this.productReturnQuestion.click();
+        //I return the response to verify its visibility in the test
+        const productReturnAnswer = this.productReturnAnswer;
+        return productReturnAnswer;
     }
 
-    async consulterFAQGarantie() {
-        //je clic sur un titroir
-        await this.questionGarantie.click();
-        //je retroune la réponse pour en vérifier la visibilité dans le test
-        const responseGarantie = this.reponseGarantie;
-        return responseGarantie;
+    async viewWarrantyFAQ() {
+        //I click on a drawer
+        await this.warrantyQuestion.click();
+        //I return the response to verify its visibility in the test
+        const warrantyAnswer = this.warrantyAnswer;
+        return warrantyAnswer;
     }
 
-    async consulterFAQPaiement() {
-        //je clic sur un titroir
-        await this.questionPaiement.click();
-        //je retroune la réponse pour en vérifier la visibilité dans le test
-        const responsePaiement = this.reponsePaiement;
-        return responsePaiement;
+    async viewPaymentFAQ() {
+        //I click on a drawer
+        await this.paymentQuestion.click();
+        //I return the response to verify its visibility in the test
+        const paymentAnswer = this.paymentAnswer;
+        return paymentAnswer;
     }
 
 }
