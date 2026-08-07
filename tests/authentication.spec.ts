@@ -11,7 +11,8 @@ test('successful authentication', async ({ page, browsing, authenticationPage: a
   await browsing.loginHeader.click();
 
   //Fill out and submit the login form
-  await authentificationPage.submitConnexionForm(users.authentifie.email,users.authentifie.password);
+  //await authentificationPage.submitConnexionForm(users.authentifie.email,users.authentifie.password);
+  await authentificationPage.submitConnexionForm(process.env.EMAIL!,users.authentifie.password);
 
   //Check the home page
   //Wait for redirection to the home page
@@ -25,7 +26,9 @@ test('successful authentication', async ({ page, browsing, authenticationPage: a
   await expect (accountPage.personalDataTitle).toBeVisible();
   //Check to see if my account information is displayed
   await expect (accountPage.fullNameValue).toContainText(users.authentifie.lastName);
-  await expect (accountPage.emailValue).toContainText(users.authentifie.email, {ignoreCase:true});
+  
+  //await expect (accountPage.emailValue).toContainText(users.authentifie.email, {ignoreCase:true});
+  await expect (accountPage.emailValue).toContainText(process.env.EMAIL!, {ignoreCase:true});
 
   //Disconnect to return to the initial state 
   await accountPage.logoutButton.click();
