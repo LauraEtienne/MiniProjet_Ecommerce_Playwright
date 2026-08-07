@@ -2,6 +2,15 @@
 "authentifie" :  {
   "email": "testaqua@test.com",
   "password": "123456789",
-  "nom": "Aqua Test" 
-    }
+  "lastName": "Test",
+  "firstName":"Aqua",
+  "phone":"4389257166",
+  "address": "7 street test",
+  "city": "City Test",
+  "postalCode": "12345",
+  "cardNumber": "4111 1111 1111 1111",
+  "cardName": "Test Aqua",
+  "expirationDate": "2026/12/01",
+  "CVV": "123"
+  }
 }

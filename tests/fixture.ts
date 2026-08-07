@@ -18,7 +18,7 @@ import { Browsing } from './pages/browsing';
 type MyFixtures = {
     homePage: Home;
     aboutPage: About;
-    authentificationPage: Authentication;
+    authenticationPage: Authentication;
     checkoutPage: Checkout;
     accountPage: Account;
     contactPage: Contact;
@@ -47,7 +47,7 @@ aboutPage: async ({page}, use)=> {
     await use(apropos);
 },
 
-authentificationPage: async ({page}, use)=> {
+authenticationPage: async ({page}, use)=> {
     //instantiation
     const auth = new Authentication(page);
     //The instance is injected into the property that will be used in the test
