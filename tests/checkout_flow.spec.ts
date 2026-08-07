@@ -3,11 +3,11 @@ import users from '../tests/data/users.json'; //import du fichier
 import { PLP } from './pages/plp';
 
 test.beforeEach(async ({ page}) => {
-    await page.goto('https://shop.missionplaywright.fr/');
+    await page.goto(process.env.URL!);
 
 });
 
-test('The user places an order successfully', async ({ page, browsing, authentificationPage, plpPage, pdpPage, cartPage, checkoutPage,accountPage }) => {
+test('The user places an order successfully', async ({ page, browsing, authenticationPage: authentificationPage, plpPage, pdpPage, cartPage, checkoutPage,accountPage }) => {
 
     await test.step('The user logs in', async () => {
         //Authentication

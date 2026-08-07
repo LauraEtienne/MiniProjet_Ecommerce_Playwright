@@ -3,11 +3,11 @@ import {faker} from '@faker-js/faker';
 
 
 test.beforeEach(async ({ page }) => {
-        await page.goto('https://shop.missionplaywright.fr/');
+        await page.goto(process.env.URL!);
 
 });
 
-test('inscription', async ({ page, browsing, authentificationPage, accountPage  }) => {
+test('inscription', async ({ page, browsing, authenticationPage: authentificationPage, accountPage  }) => {
   const fakeUser = {
       name: faker.person.fullName(),
       email: faker.internet.email(),

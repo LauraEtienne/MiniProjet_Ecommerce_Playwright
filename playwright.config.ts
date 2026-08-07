@@ -1,4 +1,13 @@
 import { defineConfig, devices } from '@playwright/test';
+import dotenv from 'dotenv';
+
+//Load the .env file first
+  dotenv.config({
+    path: `env/.env.${process.env.ENV|| 'local'}`,
+  })
+  
+  // Fallback URL: Prevents CI pipeline failure (e.g. GitHub Actions) when no .env file exists
+  process.env.URL = process.env.URL || 'https://shop.missionplaywright.fr/';
 
 /**
  * Read environment variables from file.
@@ -26,7 +35,7 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
-    // baseURL: 'http://localhost:3000',
+    baseURL: process.env.URL || 'https://shop.missionplaywright.fr/',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
@@ -76,4 +85,8 @@ export default defineConfig({
   //   url: 'http://localhost:3000',
   //   reuseExistingServer: !process.env.CI,
   // },
+
+ 
+
+
 });
