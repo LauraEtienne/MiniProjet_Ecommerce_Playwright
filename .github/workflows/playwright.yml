@@ -20,6 +20,7 @@ jobs:
     - name: Run Playwright tests
       env:
         EMAIL: ${{ vars.EMAIL }}
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
       run: npx playwright test
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
