@@ -15,7 +15,7 @@ test('successful authentication', async ({ page, browsing, authenticationPage: a
 
   //Check the home page
   //Wait for redirection to the home page
-  await page.waitForURL('https://shop.missionplaywright.fr/');  
+  await page.waitForURL(process.env.URL!);  
 
   //Go to My Account to make sure I'm logged in
   await browsing.clickMyAccountAfterAuthentication();
@@ -30,7 +30,7 @@ test('successful authentication', async ({ page, browsing, authenticationPage: a
   //Disconnect to return to the initial state 
   await accountPage.logoutButton.click();
   //Wait for redirection to the home page
-  await page.waitForURL('https://shop.missionplaywright.fr/');  
+  await page.waitForURL(process.env.URL!);  
   //We make sure that the "Login" button is visible again
   await expect(browsing.loginHeader).toBeVisible();
 });

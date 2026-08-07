@@ -23,7 +23,7 @@ test('inscription', async ({ page, browsing, authenticationPage: authentificatio
   //Fill out and submit the registration form
   await authentificationPage.submitInscriptionForm(fakeUser.name, fakeUser.email, fakeUser.password, fakeUser.password);
   //Wait for redirection to the home page
-  await page.waitForURL('https://shop.missionplaywright.fr/');  
+  await page.waitForURL(process.env.URL!);  
   //Verify that your registration has been processed by checking "My Account"
   await browsing.clickMyAccountAfterAuthentication();
   //Click on "Profile"
