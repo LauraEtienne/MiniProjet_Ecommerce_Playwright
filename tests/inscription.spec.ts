@@ -4,6 +4,7 @@ import {faker} from '@faker-js/faker';
 
 test.beforeEach(async ({ page }) => {
         await page.goto(process.env.URL!);
+        waitUntil: 'networkidle'
 
 });
 
