@@ -43,6 +43,7 @@ test('The user places an order successfully', async ({ page, browsing, authentic
          //User clicks on the cart icon in the header
          await browsing.cartHeader.click();
          //Cart must be displayed
+         await expect(page).toHaveURL(/\/cart/);
          await expect(cartPage.pageTitle).toBeVisible();
          //User check his/her cart
          //TO BE COMPLETED -----------------------------------------
@@ -57,6 +58,7 @@ test('The user places an order successfully', async ({ page, browsing, authentic
         await expect(checkoutPage.deliveryTitle).toBeVisible();
         //User submit delivery data
         await checkoutPage.submitDeliveryData(users.authentifie.firstName,users.authentifie.lastName, users.authentifie.email, users.authentifie.phone,users.authentifie.address,users.authentifie.city,users.authentifie.postalCode);
+        await expect(checkoutPage.cardNumberEdit).toBeVisible();
         //User submit payment
         await checkoutPage.submitPaymentData(users.authentifie.cardNumber,users.authentifie.cardName, users.authentifie.expirationDate, users.authentifie.CVV);
         //User sees the success message

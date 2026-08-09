@@ -3,6 +3,8 @@ import dotenv from 'dotenv';
 
 
 dotenv.config({ path: `env/.env.${process.env.ENV || 'local'}` });
+console.log('Loaded env file: env/.env.local');
+console.log('SLACK_WEBHOOK_URL is set:', !!process.env.SLACK_WEBHOOK_URL);
 
 
 // Fallback URL
@@ -37,7 +39,15 @@ export default defineConfig({
     slackWebHookUrl: process.env.SLACK_WEBHOOK_URL,
    sendResults: 'always',
    },
- ],
+  ],
+  ['line'], [ 
+    'allure-playwright', 
+    { 
+      resultsDir: 'allure-results', 
+      detail: true, 
+      suiteTitle: true, 
+    } 
+  ]
 ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {

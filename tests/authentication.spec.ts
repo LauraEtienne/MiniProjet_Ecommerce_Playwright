@@ -11,6 +11,10 @@ test('successful authentication', async ({ page, browsing, authenticationPage: a
   //Go to the auth page from the header
   await browsing.loginHeader.click();
 
+  //Additional explicit wait to avoid flakinedd
+  await expect(authentificationPage.connexionEmailInput).toBeVisible();
+
+
   //Fill out and submit the login form
   //await authentificationPage.submitConnexionForm(users.authentifie.email,users.authentifie.password);
   await authentificationPage.submitConnexionForm(process.env.EMAIL!,users.authentifie.password);
