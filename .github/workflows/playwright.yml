@@ -15,6 +15,8 @@ jobs:
         node-version: lts/*
     - name: Install dependencies
       run: npm ci
+    - name: Install Allure Commandline
+      run: npm install -g allure-commandline
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
@@ -22,6 +24,12 @@ jobs:
         EMAIL: ${{ vars.EMAIL }}
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
       run: npx playwright test
+
+    - name: Generate Allure report
+      if: ${{ !cancelled()}}
+      run: allure generate allure-results --clean -o allure-report
+
+      
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:

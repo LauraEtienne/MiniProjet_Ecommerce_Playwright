@@ -12,5 +12,19 @@
   "cardName": "Test Aqua",
   "expirationDate": "2026/12/01",
   "CVV": "123"
+  },
+  "authentifiCheckout" :  {
+  "email": "testaqua2@test.com",
+  "password": "123456789",
+  "lastName": "Test",
+  "firstName":"Checkout",
+  "phone":"4389257166",
+  "address": "7 street test",
+  "city": "City Test",
+  "postalCode": "12345",
+  "cardNumber": "4111 1111 1111 1111",
+  "cardName": "Test Aqua",
+  "expirationDate": "2026/12/01",
+  "CVV": "123"
   }
 }
