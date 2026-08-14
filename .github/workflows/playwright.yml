@@ -38,13 +38,14 @@ jobs:
 
     - name: Setup GitHub Pages
       uses: actions/configure-page@v5
-         
+
     - name: Upload Allure report
       uses: actions/upload-pages-artifact@v4
       with:
         path: allure-report/
 
     - name: Deploy Allure report to GitHub Pages
+      if: github.event_name == 'push'
       id: deployment
       uses: actions/deploy-pages@v4
 
