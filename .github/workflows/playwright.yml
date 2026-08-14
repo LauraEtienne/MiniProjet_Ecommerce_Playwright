@@ -1,31 +1,38 @@
 name: Playwright Tests
+
 on:
   push:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
-permissions: 
+
+permissions:
   contents: read
   pages: write
   id-token: write
+
 jobs:
+
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
-    environment: 
-     name: github-pages
-     url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
     - uses: actions/checkout@v4
+
     - uses: actions/setup-node@v4
       with:
         node-version: lts/*
+
     - name: Install dependencies
       run: npm ci
+
     - name: Install Allure Commandline
       run: npm install -g allure-commandline
+
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
+
     - name: Run Playwright tests
       env:
         EMAIL: ${{ vars.EMAIL }}
@@ -33,26 +40,25 @@ jobs:
       run: npx playwright test
 
     - name: Generate Allure report
-      if: ${{ !cancelled()}}
+      if: ${{ !cancelled() }}
       run: allure generate allure-results --clean -o allure-report
 
-    - name: Setup GitHub Pages
-      uses: actions/configure-page@v5
-
     - name: Upload Allure report
+      if: ${{ !cancelled() }}
       uses: actions/upload-pages-artifact@v4
       with:
         path: allure-report/
 
+  deploy:
+    if: github.event_name == 'push'
+    needs: test
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
     - name: Deploy Allure report to GitHub Pages
-      if: github.event_name == 'push'
       id: deployment
       uses: actions/deploy-pages@v4
-
-      
-    - uses: actions/upload-artifact@v4
-      if: ${{ !cancelled() }}
-      with:
-        name: playwright-report
-        path: playwright-report/
-        retention-days: 30
