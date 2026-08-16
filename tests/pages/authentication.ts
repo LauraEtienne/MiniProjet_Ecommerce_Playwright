@@ -35,6 +35,8 @@ export class Authentication {
     readonly forgotEmailInput: Locator;
     readonly forgotSubmitButton: Locator;
     readonly forgotBackLink: Locator;
+    //Erreur - Toast
+    readonly toastError: Locator;
 
 
     //Le constructeur initialise les éléments // Localiser les éléments
@@ -70,6 +72,9 @@ export class Authentication {
         this.forgotEmailInput = page.getByTestId('forgot-email-input');
         this.forgotSubmitButton = page.getByTestId('forgot-submit-button');
         this.forgotBackLink = page.getByTestId('forgot-back-button');
+        //Erreur - Toast
+        this.toastError = page.locator(  'li[role="status"][data-state="open"]',  { hasText: 'Erreur de connexion' }
+);
     }
 
     //méthodes
