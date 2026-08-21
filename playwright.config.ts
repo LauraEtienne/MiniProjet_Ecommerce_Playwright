@@ -1,13 +1,14 @@
 import { defineConfig, devices } from '@playwright/test';
 import dotenv from 'dotenv';
 
-//Load the .env file first
-  dotenv.config({
-    path: `env/.env.${process.env.ENV|| 'local'}`,
-  })
-  
-  // Fallback URL: Prevents CI pipeline failure (e.g. GitHub Actions) when no .env file exists
-  process.env.URL = process.env.URL || 'https://shop.missionplaywright.fr/';
+
+dotenv.config({ path: `env/.env.${process.env.ENV || 'local'}` });
+console.log('Loaded env file: env/.env.local');
+console.log('SLACK_WEBHOOK_URL is set:', !!process.env.SLACK_WEBHOOK_URL);
+
+
+// Fallback URL
+process.env.URL = process.env.URL || 'https://shop.missionplaywright.fr/';
 
 /**
  * Read environment variables from file.
@@ -23,15 +24,32 @@ import dotenv from 'dotenv';
 export default defineConfig({
   testDir: './tests',
   /* Run tests in files in parallel */
-  fullyParallel: true,
+  fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : undefined,
+  //workers: process.env.CI ? 1 : undefined,
+  workers: 1,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  reporter: [
+  [
+   'playwright-slack-report/dist/src/SlackReporter',
+   {
+    slackWebHookUrl: process.env.SLACK_WEBHOOK_URL,
+   sendResults: 'always',
+   },
+  ],
+  ['line'], [ 
+    'allure-playwright', 
+    { 
+      resultsDir: 'allure-results', 
+      detail: true, 
+      suiteTitle: true, 
+    } 
+  ]
+],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
@@ -85,8 +103,6 @@ export default defineConfig({
   //   url: 'http://localhost:3000',
   //   reuseExistingServer: !process.env.CI,
   // },
-
- 
 
 
 });

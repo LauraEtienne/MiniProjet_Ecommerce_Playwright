@@ -3,6 +3,7 @@ import users from '../tests/data/users.json'; //import du fichier
 
 test.beforeEach(async ({ page }) => {
         await page.goto(process.env.URL!);
+        waitUntil: 'networkidle'
 });
 
 test('successful authentication', async ({ page, browsing, authenticationPage: authentificationPage,accountPage }) => {
@@ -10,12 +11,17 @@ test('successful authentication', async ({ page, browsing, authenticationPage: a
   //Go to the auth page from the header
   await browsing.loginHeader.click();
 
+  //Additional explicit wait to avoid flakinedd
+  await expect(authentificationPage.connexionEmailInput).toBeVisible();
+
+
   //Fill out and submit the login form
-  await authentificationPage.submitConnexionForm(users.authentifie.email,users.authentifie.password);
+  //await authentificationPage.submitConnexionForm(users.authentifie.email,users.authentifie.password);
+  await authentificationPage.submitConnexionForm(process.env.EMAIL!,users.authentifie.password);
 
   //Check the home page
   //Wait for redirection to the home page
-  await page.waitForURL('https://shop.missionplaywright.fr/');  
+  await page.waitForURL(process.env.URL!);  
 
   //Go to My Account to make sure I'm logged in
   await browsing.clickMyAccountAfterAuthentication();
@@ -25,12 +31,14 @@ test('successful authentication', async ({ page, browsing, authenticationPage: a
   await expect (accountPage.personalDataTitle).toBeVisible();
   //Check to see if my account information is displayed
   await expect (accountPage.fullNameValue).toContainText(users.authentifie.lastName);
-  await expect (accountPage.emailValue).toContainText(users.authentifie.email, {ignoreCase:true});
+  
+  //await expect (accountPage.emailValue).toContainText(users.authentifie.email, {ignoreCase:true});
+  await expect (accountPage.emailValue).toContainText(process.env.EMAIL!, {ignoreCase:true});
 
   //Disconnect to return to the initial state 
   await accountPage.logoutButton.click();
   //Wait for redirection to the home page
-  await page.waitForURL('https://shop.missionplaywright.fr/');  
+  await page.waitForURL(process.env.URL!);  
   //We make sure that the "Login" button is visible again
   await expect(browsing.loginHeader).toBeVisible();
 });

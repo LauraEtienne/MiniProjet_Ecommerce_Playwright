@@ -4,6 +4,7 @@ import { PLP } from './pages/plp';
 
 test.beforeEach(async ({ page}) => {
     await page.goto(process.env.URL!);
+     waitUntil: 'networkidle'
 
 });
 
@@ -14,7 +15,7 @@ test('The user places an order successfully', async ({ page, browsing, authentic
         //1. Go to the auth page from the header
         await browsing.loginHeader.click();
         //2. Fill out and submit the login form
-        await authentificationPage.submitConnexionForm(users.authentifie.email,users.authentifie.password);
+        await authentificationPage.submitConnexionForm(users.authentifiCheckout.email,users.authentifiCheckout.password);
         });
 
 
@@ -42,6 +43,7 @@ test('The user places an order successfully', async ({ page, browsing, authentic
          //User clicks on the cart icon in the header
          await browsing.cartHeader.click();
          //Cart must be displayed
+         await expect(page).toHaveURL(/\/cart/);
          await expect(cartPage.pageTitle).toBeVisible();
          //User check his/her cart
          //TO BE COMPLETED -----------------------------------------
@@ -54,10 +56,14 @@ test('The user places an order successfully', async ({ page, browsing, authentic
         await cartPage.checkoutButton.click();
         //Checkout must be displayed 
         await expect(checkoutPage.deliveryTitle).toBeVisible();
+        //additional explicit wait to avoid flakiness
+        await expect(checkoutPage.firstnameEdit).toBeVisible();
         //User submit delivery data
-        await checkoutPage.submitDeliveryData(users.authentifie.firstName,users.authentifie.lastName, users.authentifie.email, users.authentifie.phone,users.authentifie.address,users.authentifie.city,users.authentifie.postalCode);
+        await checkoutPage.submitDeliveryData(users.authentifiCheckout.firstName,users.authentifiCheckout.lastName, users.authentifiCheckout.email, users.authentifiCheckout.phone,users.authentifiCheckout.address,users.authentifiCheckout.city,users.authentifiCheckout.postalCode);
+        //additional explicit wait to avoid flakiness
+        await expect(checkoutPage.cardNumberEdit).toBeVisible();
         //User submit payment
-        await checkoutPage.submitPaymentData(users.authentifie.cardNumber,users.authentifie.cardName, users.authentifie.expirationDate, users.authentifie.CVV);
+        await checkoutPage.submitPaymentData(users.authentifiCheckout.cardNumber,users.authentifiCheckout.cardName, users.authentifiCheckout.expirationDate, users.authentifiCheckout.CVV);
         //User sees the success message
         await expect(checkoutPage.successMessage).toBeVisible();
         });
