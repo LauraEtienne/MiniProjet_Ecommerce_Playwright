@@ -9,6 +9,11 @@ node_modules/
 .env*
 allure-report/
 allure-results/
-.claude/
 # Décommentez si .mcp.json contient des variables propres à votre machine
+.mcp.json
+
+# Ignorer les sessions et fichiers locaux Claude
+.claude/*
+!.claude/skills/
+.claude.json
 .mcp.json
