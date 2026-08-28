@@ -1,0 +1,284 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - region "Notifications (F8)":
+      - list
+    - region "Notifications alt+T"
+    - generic [ref=e3]:
+      - banner [ref=e4]:
+        - generic [ref=e6]:
+          - link "TechHub" [ref=e7] [cursor=pointer]:
+            - /url: /
+          - navigation [ref=e12]:
+            - link "Accueil" [ref=e13] [cursor=pointer]:
+              - /url: /
+            - link "Produits" [ref=e14] [cursor=pointer]:
+              - /url: /products
+            - link "À propos" [ref=e15] [cursor=pointer]:
+              - /url: /about
+            - link "Contact" [ref=e16] [cursor=pointer]:
+              - /url: /contact
+          - generic [ref=e17]:
+            - button [ref=e18] [cursor=pointer]
+            - link [ref=e19] [cursor=pointer]:
+              - /url: /cart
+              - button [ref=e20]
+            - link [ref=e21] [cursor=pointer]:
+              - /url: /auth
+              - button [ref=e22]
+      - main [ref=e23]:
+        - generic [ref=e29]:
+          - generic [ref=e30]: Nouveautés disponibles
+          - heading "La technologie qui simplifie votre quotidien" [level=1] [ref=e33]
+          - paragraph [ref=e34]: Découvrez notre sélection de produits tech innovants pour la maison, le bureau et le gaming. Qualité premium, prix compétitifs.
+          - generic [ref=e35]:
+            - link [ref=e36] [cursor=pointer]:
+              - /url: /products
+              - button "Découvrir les produits" [ref=e37]
+            - link [ref=e38] [cursor=pointer]:
+              - /url: /about
+              - button "En savoir plus" [ref=e39]
+          - generic [ref=e40]:
+            - generic [ref=e41]:
+              - paragraph [ref=e42]: 10K+
+              - paragraph [ref=e43]: Clients satisfaits
+            - generic [ref=e45]:
+              - paragraph [ref=e46]: 500+
+              - paragraph [ref=e47]: Produits
+            - generic [ref=e49]:
+              - paragraph [ref=e50]: "4.9"
+              - paragraph [ref=e51]: Note moyenne
+        - generic [ref=e53]:
+          - generic [ref=e54]:
+            - heading "Explorez nos catégories" [level=2] [ref=e55]
+            - paragraph [ref=e56]: Des produits sélectionnés avec soin pour répondre à tous vos besoins technologiques.
+          - generic [ref=e57]:
+            - link [ref=e59] [cursor=pointer]:
+              - /url: /products?category=accessories
+              - generic [ref=e60]:
+                - heading "Accessoires" [level=3] [ref=e65]
+                - paragraph [ref=e66]: Écouteurs, chargeurs, câbles et plus
+                - paragraph [ref=e67]: 24 produits
+            - link [ref=e71] [cursor=pointer]:
+              - /url: /products?category=smart-home
+              - generic [ref=e72]:
+                - heading "Maison Connectée" [level=3] [ref=e78]
+                - paragraph [ref=e79]: Domotique et objets intelligents
+                - paragraph [ref=e80]: 18 produits
+            - link [ref=e84] [cursor=pointer]:
+              - /url: /products?category=gaming
+              - generic [ref=e85]:
+                - heading "Gaming" [level=3] [ref=e90]
+                - paragraph [ref=e91]: Équipement gaming premium
+                - paragraph [ref=e92]: 32 produits
+            - link [ref=e96] [cursor=pointer]:
+              - /url: /products?category=office
+              - generic [ref=e97]:
+                - heading "Bureau" [level=3] [ref=e102]
+                - paragraph [ref=e103]: Productivité et ergonomie
+                - paragraph [ref=e104]: 21 produits
+        - generic [ref=e108]:
+          - generic [ref=e109]:
+            - generic [ref=e110]:
+              - heading "Produits phares" [level=2] [ref=e111]
+              - paragraph [ref=e112]: Les best-sellers préférés de notre communauté, sélectionnés pour leur qualité exceptionnelle.
+            - link [ref=e113] [cursor=pointer]:
+              - /url: /products
+              - button "Voir tout" [ref=e114]
+          - generic [ref=e115]:
+            - link "Écouteurs Sans Fil Pro Nouveau -20% Accessoires Écouteurs Sans Fil Pro (1247) 199.99 € 249.99 €" [ref=e117] [cursor=pointer]:
+              - /url: /product/1
+              - generic [ref=e118]:
+                - generic [ref=e119]:
+                  - img "Écouteurs Sans Fil Pro" [ref=e120]
+                  - generic [ref=e121]:
+                    - generic [ref=e122]: Nouveau
+                    - generic [ref=e125]: "-20%"
+                  - button [ref=e127]
+                - generic [ref=e128]:
+                  - paragraph [ref=e129]: Accessoires
+                  - heading "Écouteurs Sans Fil Pro" [level=3] [ref=e130]
+                  - generic [ref=e131]: (1247)
+                  - generic [ref=e144]:
+                    - generic [ref=e145]: 199.99 €
+                    - generic [ref=e146]: 249.99 €
+            - link "Hub USB-C 12-en-1 Accessoires Hub USB-C 12-en-1 (823) 89.99 €" [ref=e148] [cursor=pointer]:
+              - /url: /product/2
+              - generic [ref=e149]:
+                - generic [ref=e150]:
+                  - img "Hub USB-C 12-en-1" [ref=e151]
+                  - button [ref=e153]
+                - generic [ref=e154]:
+                  - paragraph [ref=e155]: Accessoires
+                  - heading "Hub USB-C 12-en-1" [level=3] [ref=e156]
+                  - generic [ref=e157]: (823)
+                  - generic [ref=e170]: 89.99 €
+            - link "Clavier Mécanique RGB -18% Gaming Clavier Mécanique RGB (2103) 179.99 € 219.99 €" [ref=e173] [cursor=pointer]:
+              - /url: /product/4
+              - generic [ref=e174]:
+                - generic [ref=e175]:
+                  - img "Clavier Mécanique RGB" [ref=e176]
+                  - generic [ref=e177]: "-18%"
+                  - button [ref=e180]
+                - generic [ref=e181]:
+                  - paragraph [ref=e182]: Gaming
+                  - heading "Clavier Mécanique RGB" [level=3] [ref=e183]
+                  - generic [ref=e184]: (2103)
+                  - generic [ref=e197]:
+                    - generic [ref=e198]: 179.99 €
+                    - generic [ref=e199]: 219.99 €
+            - link "Thermostat Connecté Pro Maison Connectée Thermostat Connecté Pro (534) 249.99 €" [ref=e201] [cursor=pointer]:
+              - /url: /product/7
+              - generic [ref=e202]:
+                - generic [ref=e203]:
+                  - img "Thermostat Connecté Pro" [ref=e204]
+                  - button [ref=e206]
+                - generic [ref=e207]:
+                  - paragraph [ref=e208]: Maison Connectée
+                  - heading "Thermostat Connecté Pro" [level=3] [ref=e209]
+                  - generic [ref=e210]: (534)
+                  - generic [ref=e223]: 249.99 €
+        - generic [ref=e226]:
+          - generic [ref=e227]:
+            - heading "Pourquoi choisir TechHub ?" [level=2] [ref=e228]
+            - paragraph [ref=e229]: Nous nous engageons à vous offrir la meilleure expérience d'achat possible.
+          - generic [ref=e230]:
+            - generic [ref=e231]:
+              - heading "Livraison Express" [level=3] [ref=e238]
+              - paragraph [ref=e239]: Gratuite dès 50€ d'achat
+            - generic [ref=e240]:
+              - heading "Paiement Sécurisé" [level=3] [ref=e244]
+              - paragraph [ref=e245]: Transactions 100% protégées
+            - generic [ref=e246]:
+              - heading "Retours Gratuits" [level=3] [ref=e251]
+              - paragraph [ref=e252]: 30 jours pour changer d'avis
+            - generic [ref=e253]:
+              - heading "Garantie 2 Ans" [level=3] [ref=e258]
+              - paragraph [ref=e259]: Sur tous nos produits
+        - generic [ref=e261]:
+          - generic [ref=e262]:
+            - heading "Ce que disent nos clients" [level=2] [ref=e263]
+            - paragraph [ref=e264]: Des milliers de clients nous font confiance. Découvrez leurs témoignages.
+          - generic [ref=e265]:
+            - generic [ref=e266]:
+              - paragraph [ref=e281]: "\"Qualité exceptionnelle ! Les écouteurs sont parfaits, la réduction de bruit est bluffante. Livraison rapide et service client réactif.\""
+              - generic [ref=e282]:
+                - generic [ref=e283]: M
+                - generic [ref=e284]:
+                  - paragraph [ref=e285]: Marie L.
+                  - paragraph [ref=e286]: Achat vérifié ✓
+            - generic [ref=e287]:
+              - paragraph [ref=e302]: "\"Mon clavier gaming est arrivé en parfait état. Les switches sont ultra réactifs et le RGB est magnifique. Je recommande !\""
+              - generic [ref=e303]:
+                - generic [ref=e304]: T
+                - generic [ref=e305]:
+                  - paragraph [ref=e306]: Thomas B.
+                  - paragraph [ref=e307]: Achat vérifié ✓
+            - generic [ref=e308]:
+              - paragraph [ref=e323]: "\"Très satisfaite de mon thermostat connecté. L'installation était simple et je fais déjà des économies sur ma facture.\""
+              - generic [ref=e324]:
+                - generic [ref=e325]: S
+                - generic [ref=e326]:
+                  - paragraph [ref=e327]: Sophie M.
+                  - paragraph [ref=e328]: Achat vérifié ✓
+            - generic [ref=e329]:
+              - paragraph [ref=e344]: "\"Le hub USB-C est exactement ce dont j'avais besoin. Compact, fonctionnel et design. Parfait pour mon MacBook !\""
+              - generic [ref=e345]:
+                - generic [ref=e346]: L
+                - generic [ref=e347]:
+                  - paragraph [ref=e348]: Lucas D.
+                  - paragraph [ref=e349]: Achat vérifié ✓
+        - generic [ref=e355]:
+          - heading "Prêt à équiper votre quotidien ?" [level=2] [ref=e356]
+          - paragraph [ref=e357]: Rejoignez plus de 10 000 clients satisfaits et découvrez nos produits tech premium.
+          - link [ref=e358] [cursor=pointer]:
+            - /url: /products
+            - button "Voir le catalogue" [ref=e359]
+      - contentinfo [ref=e360]:
+        - generic [ref=e361]:
+          - generic [ref=e362]:
+            - generic [ref=e363]:
+              - link "TechHub" [ref=e364] [cursor=pointer]:
+                - /url: /
+              - paragraph [ref=e369]: La technologie qui simplifie votre quotidien. Découvrez les meilleurs produits tech sélectionnés par nos experts.
+              - generic [ref=e370]:
+                - link "Facebook" [ref=e371] [cursor=pointer]:
+                  - /url: "#"
+                - link "Twitter" [ref=e374] [cursor=pointer]:
+                  - /url: "#"
+                - link "Instagram" [ref=e377] [cursor=pointer]:
+                  - /url: "#"
+                - link "LinkedIn" [ref=e381] [cursor=pointer]:
+                  - /url: "#"
+            - generic [ref=e386]:
+              - heading "Produits" [level=4] [ref=e387]
+              - list [ref=e388]:
+                - listitem [ref=e389]:
+                  - link "Accessoires" [ref=e390] [cursor=pointer]:
+                    - /url: /products?category=accessories
+                - listitem [ref=e391]:
+                  - link "Maison Connectée" [ref=e392] [cursor=pointer]:
+                    - /url: /products?category=smart-home
+                - listitem [ref=e393]:
+                  - link "Gaming" [ref=e394] [cursor=pointer]:
+                    - /url: /products?category=gaming
+                - listitem [ref=e395]:
+                  - link "Bureau" [ref=e396] [cursor=pointer]:
+                    - /url: /products?category=office
+            - generic [ref=e397]:
+              - heading "Entreprise" [level=4] [ref=e398]
+              - list [ref=e399]:
+                - listitem [ref=e400]:
+                  - link "À propos" [ref=e401] [cursor=pointer]:
+                    - /url: /about
+                - listitem [ref=e402]:
+                  - link "Carrières" [ref=e403] [cursor=pointer]:
+                    - /url: /
+                - listitem [ref=e404]:
+                  - link "Presse" [ref=e405] [cursor=pointer]:
+                    - /url: /
+                - listitem [ref=e406]:
+                  - link "Blog" [ref=e407] [cursor=pointer]:
+                    - /url: /
+            - generic [ref=e408]:
+              - heading "Support" [level=4] [ref=e409]
+              - list [ref=e410]:
+                - listitem [ref=e411]:
+                  - link "Contact" [ref=e412] [cursor=pointer]:
+                    - /url: /contact
+                - listitem [ref=e413]:
+                  - link "FAQ" [ref=e414] [cursor=pointer]:
+                    - /url: /contact#faq
+                - listitem [ref=e415]:
+                  - link "Livraison" [ref=e416] [cursor=pointer]:
+                    - /url: /
+                - listitem [ref=e417]:
+                  - link "Retours" [ref=e418] [cursor=pointer]:
+                    - /url: /
+            - generic [ref=e419]:
+              - heading "Légal" [level=4] [ref=e420]
+              - list [ref=e421]:
+                - listitem [ref=e422]:
+                  - link "CGV" [ref=e423] [cursor=pointer]:
+                    - /url: /
+                - listitem [ref=e424]:
+                  - link "Confidentialité" [ref=e425] [cursor=pointer]:
+                    - /url: /
+                - listitem [ref=e426]:
+                  - link "Cookies" [ref=e427] [cursor=pointer]:
+                    - /url: /
+                - listitem [ref=e428]:
+                  - link "Mentions légales" [ref=e429] [cursor=pointer]:
+                    - /url: /
+          - generic [ref=e430]:
+            - generic [ref=e431]:
+              - link "contact@techhub.fr" [ref=e432] [cursor=pointer]:
+                - /url: mailto:contact@techhub.fr
+              - link "01 23 45 67 89" [ref=e436] [cursor=pointer]:
+                - /url: tel:+33123456789
+              - generic [ref=e439]: Paris, France
+            - paragraph [ref=e443]: © 2026 TechHub. Tous droits réservés.
+  - complementary "Edit with Lovable" [ref=e444]:
+    - link "Edit with Lovable" [ref=e445] [cursor=pointer]:
+      - /url: https://lovable.dev/projects/lovp_0rewj1v2fv99a9r25rp0m5e892?utm_source=lovable-badge
+      - generic [ref=e446]: Edit with
+    - button "Dismiss" [ref=e452] [cursor=pointer]
