@@ -1,0 +1,208 @@
+- generic [active] [ref=f4e1]:
+  - generic [ref=f4e2]:
+    - region "Notifications (F8)":
+      - list
+    - region "Notifications alt+T"
+    - generic [ref=f4e3]:
+      - banner [ref=f4e4]:
+        - generic [ref=f4e6]:
+          - link "TechHub" [ref=f4e7] [cursor=pointer]:
+            - /url: /
+          - navigation [ref=f4e12]:
+            - link "Accueil" [ref=f4e13] [cursor=pointer]:
+              - /url: /
+            - link "Produits" [ref=f4e14] [cursor=pointer]:
+              - /url: /products
+            - link "À propos" [ref=f4e15] [cursor=pointer]:
+              - /url: /about
+            - link "Contact" [ref=f4e16] [cursor=pointer]:
+              - /url: /contact
+          - generic [ref=f4e17]:
+            - button [ref=f4e18] [cursor=pointer]
+            - link [ref=f4e19] [cursor=pointer]:
+              - /url: /cart
+              - button [ref=f4e20]
+            - link [ref=f4e21] [cursor=pointer]:
+              - /url: /auth
+              - button [ref=f4e22]
+      - main [ref=f4e23]:
+        - generic [ref=f4e24]:
+          - navigation [ref=f4e25]:
+            - link "Retour au catalogue" [ref=f4e26] [cursor=pointer]:
+              - /url: /products
+          - generic [ref=f4e29]:
+            - generic [ref=f4e30]:
+              - img "Écouteurs Sans Fil Pro" [ref=f4e32]
+              - generic [ref=f4e33]:
+                - generic [ref=f4e34]: Nouveau
+                - generic [ref=f4e35]: "-20%"
+            - generic [ref=f4e36]:
+              - paragraph [ref=f4e37]: Accessoires
+              - heading "Écouteurs Sans Fil Pro" [level=1] [ref=f4e38]
+              - generic [ref=f4e39]: 4.8 (1247 avis)
+              - generic [ref=f4e52]:
+                - generic [ref=f4e53]: 199.99 €
+                - generic [ref=f4e54]: 249.99 €
+              - paragraph [ref=f4e55]: Écouteurs Bluetooth haute fidélité avec réduction de bruit active et autonomie de 30 heures.
+              - generic [ref=f4e56]:
+                - heading "Caractéristiques" [level=3] [ref=f4e57]
+                - list [ref=f4e58]:
+                  - listitem [ref=f4e59]: Réduction de bruit active
+                  - listitem [ref=f4e63]: 30h d'autonomie
+                  - listitem [ref=f4e67]: Bluetooth 5.3
+                  - listitem [ref=f4e71]: Étui de charge sans fil
+                  - listitem [ref=f4e75]: Résistant à l'eau IPX4
+              - paragraph [ref=f4e80]: En stock - Expédition sous 24h
+              - generic [ref=f4e82]:
+                - button "Ajouter au panier" [ref=f4e83] [cursor=pointer]
+                - button [ref=f4e84] [cursor=pointer]
+                - button [ref=f4e85] [cursor=pointer]
+              - generic [ref=f4e86]:
+                - paragraph [ref=f4e93]: Livraison gratuite
+                - paragraph [ref=f4e97]: Garantie 2 ans
+                - paragraph [ref=f4e102]: Retour 30 jours
+          - generic [ref=f4e103]:
+            - heading "Avis clients" [level=2] [ref=f4e104]
+            - generic [ref=f4e105]:
+              - generic [ref=f4e106]:
+                - generic [ref=f4e107]:
+                  - generic [ref=f4e108]: M
+                  - generic [ref=f4e109]:
+                    - paragraph [ref=f4e110]: Marie L.
+                    - generic [ref=f4e111]: Achat vérifié
+                - paragraph [ref=f4e124]: Qualité exceptionnelle ! Les écouteurs sont parfaits, la réduction de bruit est bluffante. Livraison rapide et service client réactif.
+              - generic [ref=f4e125]:
+                - generic [ref=f4e126]:
+                  - generic [ref=f4e127]: T
+                  - generic [ref=f4e128]:
+                    - paragraph [ref=f4e129]: Thomas B.
+                    - generic [ref=f4e130]: Achat vérifié
+                - paragraph [ref=f4e143]: Mon clavier gaming est arrivé en parfait état. Les switches sont ultra réactifs et le RGB est magnifique. Je recommande !
+          - generic [ref=f4e144]:
+            - heading "Produits similaires" [level=2] [ref=f4e145]
+            - generic [ref=f4e146]:
+              - link "Hub USB-C 12-en-1 Accessoires Hub USB-C 12-en-1 (823) 89.99 €" [ref=f4e148] [cursor=pointer]:
+                - /url: /product/2
+                - generic [ref=f4e149]:
+                  - generic [ref=f4e150]:
+                    - img "Hub USB-C 12-en-1" [ref=f4e151]
+                    - button [ref=f4e153]
+                  - generic [ref=f4e154]:
+                    - paragraph [ref=f4e155]: Accessoires
+                    - heading "Hub USB-C 12-en-1" [level=3] [ref=f4e156]
+                    - generic [ref=f4e157]: (823)
+                    - generic [ref=f4e170]: 89.99 €
+              - link "Station de Charge Qi Accessoires Station de Charge Qi (892) 79.99 €" [ref=f4e173] [cursor=pointer]:
+                - /url: /product/6
+                - generic [ref=f4e174]:
+                  - generic [ref=f4e175]:
+                    - img "Station de Charge Qi" [ref=f4e176]
+                    - button [ref=f4e178]
+                  - generic [ref=f4e179]:
+                    - paragraph [ref=f4e180]: Accessoires
+                    - heading "Station de Charge Qi" [level=3] [ref=f4e181]
+                    - generic [ref=f4e182]: (892)
+                    - generic [ref=f4e195]: 79.99 €
+              - link "Enceinte Portable 360 -16% Accessoires Enceinte Portable 360 (756) 159.99 € 189.99 €" [ref=f4e198] [cursor=pointer]:
+                - /url: /product/10
+                - generic [ref=f4e199]:
+                  - generic [ref=f4e200]:
+                    - img "Enceinte Portable 360" [ref=f4e201]
+                    - generic [ref=f4e202]: "-16%"
+                    - button [ref=f4e205]
+                  - generic [ref=f4e206]:
+                    - paragraph [ref=f4e207]: Accessoires
+                    - heading "Enceinte Portable 360" [level=3] [ref=f4e208]
+                    - generic [ref=f4e209]: (756)
+                    - generic [ref=f4e222]:
+                      - generic [ref=f4e223]: 159.99 €
+                      - generic [ref=f4e224]: 189.99 €
+      - contentinfo [ref=f4e225]:
+        - generic [ref=f4e226]:
+          - generic [ref=f4e227]:
+            - generic [ref=f4e228]:
+              - link "TechHub" [ref=f4e229] [cursor=pointer]:
+                - /url: /
+              - paragraph [ref=f4e234]: La technologie qui simplifie votre quotidien. Découvrez les meilleurs produits tech sélectionnés par nos experts.
+              - generic [ref=f4e235]:
+                - link "Facebook" [ref=f4e236] [cursor=pointer]:
+                  - /url: "#"
+                - link "Twitter" [ref=f4e239] [cursor=pointer]:
+                  - /url: "#"
+                - link "Instagram" [ref=f4e242] [cursor=pointer]:
+                  - /url: "#"
+                - link "LinkedIn" [ref=f4e246] [cursor=pointer]:
+                  - /url: "#"
+            - generic [ref=f4e251]:
+              - heading "Produits" [level=4] [ref=f4e252]
+              - list [ref=f4e253]:
+                - listitem [ref=f4e254]:
+                  - link "Accessoires" [ref=f4e255] [cursor=pointer]:
+                    - /url: /products?category=accessories
+                - listitem [ref=f4e256]:
+                  - link "Maison Connectée" [ref=f4e257] [cursor=pointer]:
+                    - /url: /products?category=smart-home
+                - listitem [ref=f4e258]:
+                  - link "Gaming" [ref=f4e259] [cursor=pointer]:
+                    - /url: /products?category=gaming
+                - listitem [ref=f4e260]:
+                  - link "Bureau" [ref=f4e261] [cursor=pointer]:
+                    - /url: /products?category=office
+            - generic [ref=f4e262]:
+              - heading "Entreprise" [level=4] [ref=f4e263]
+              - list [ref=f4e264]:
+                - listitem [ref=f4e265]:
+                  - link "À propos" [ref=f4e266] [cursor=pointer]:
+                    - /url: /about
+                - listitem [ref=f4e267]:
+                  - link "Carrières" [ref=f4e268] [cursor=pointer]:
+                    - /url: /product/1
+                - listitem [ref=f4e269]:
+                  - link "Presse" [ref=f4e270] [cursor=pointer]:
+                    - /url: /product/1
+                - listitem [ref=f4e271]:
+                  - link "Blog" [ref=f4e272] [cursor=pointer]:
+                    - /url: /product/1
+            - generic [ref=f4e273]:
+              - heading "Support" [level=4] [ref=f4e274]
+              - list [ref=f4e275]:
+                - listitem [ref=f4e276]:
+                  - link "Contact" [ref=f4e277] [cursor=pointer]:
+                    - /url: /contact
+                - listitem [ref=f4e278]:
+                  - link "FAQ" [ref=f4e279] [cursor=pointer]:
+                    - /url: /contact#faq
+                - listitem [ref=f4e280]:
+                  - link "Livraison" [ref=f4e281] [cursor=pointer]:
+                    - /url: /product/1
+                - listitem [ref=f4e282]:
+                  - link "Retours" [ref=f4e283] [cursor=pointer]:
+                    - /url: /product/1
+            - generic [ref=f4e284]:
+              - heading "Légal" [level=4] [ref=f4e285]
+              - list [ref=f4e286]:
+                - listitem [ref=f4e287]:
+                  - link "CGV" [ref=f4e288] [cursor=pointer]:
+                    - /url: /product/1
+                - listitem [ref=f4e289]:
+                  - link "Confidentialité" [ref=f4e290] [cursor=pointer]:
+                    - /url: /product/1
+                - listitem [ref=f4e291]:
+                  - link "Cookies" [ref=f4e292] [cursor=pointer]:
+                    - /url: /product/1
+                - listitem [ref=f4e293]:
+                  - link "Mentions légales" [ref=f4e294] [cursor=pointer]:
+                    - /url: /product/1
+          - generic [ref=f4e295]:
+            - generic [ref=f4e296]:
+              - link "contact@techhub.fr" [ref=f4e297] [cursor=pointer]:
+                - /url: mailto:contact@techhub.fr
+              - link "01 23 45 67 89" [ref=f4e301] [cursor=pointer]:
+                - /url: tel:+33123456789
+              - generic [ref=f4e304]: Paris, France
+            - paragraph [ref=f4e308]: © 2026 TechHub. Tous droits réservés.
+  - complementary "Edit with Lovable" [ref=f4e309]:
+    - link "Edit with Lovable" [ref=f4e310] [cursor=pointer]:
+      - /url: https://lovable.dev/projects/lovp_0rewj1v2fv99a9r25rp0m5e892?utm_source=lovable-badge
+      - generic [ref=f4e311]: Edit with
+    - button "Dismiss" [ref=f4e317] [cursor=pointer]
