@@ -17,3 +17,4 @@ allure-results/
 !.claude/skills/
 .claude.json
 .mcp.json
+~$*
