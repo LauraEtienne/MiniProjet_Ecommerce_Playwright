@@ -1,14 +1,13 @@
-import { test, expect } from './fixture';
+import { test, expect } from '../../fixture';
 import {faker} from '@faker-js/faker';
 
 
 test.beforeEach(async ({ page }) => {
         await page.goto(process.env.URL!);
-        waitUntil: 'networkidle'
 
 });
 
-test('inscription', async ({ page, browsing, authenticationPage: authentificationPage, accountPage  }) => {
+test('registration', async ({ page, browsing, authenticationPage: authentificationPage, accountPage  }) => {
   const fakeUser = {
       name: faker.person.fullName(),
       email: faker.internet.email(),

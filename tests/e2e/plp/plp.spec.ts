@@ -4,7 +4,7 @@
   - Steps mirror `specs/plp/testplp.md`
 */
 
-import { test, expect } from '../fixture';
+import { test, expect } from '../../fixture';
 
 test.beforeEach(async ({ page, browsing, plpPage }) => {
   // Navigate to base URL then to the PLP via header so each test starts on the products page

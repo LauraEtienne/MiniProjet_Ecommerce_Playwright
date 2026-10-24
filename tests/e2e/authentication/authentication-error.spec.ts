@@ -5,8 +5,8 @@
   - Message strings are in French as defined in the spec file.
 */
 
-import { test, expect } from '../fixture';
-import users from '../data/users.json'; //import du fichier
+import { test, expect } from '../../fixture';
+import users from '../../data/users.json'; //import du fichier
 
 
 test.beforeEach(async ({ page }) => {

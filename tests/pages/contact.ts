@@ -31,6 +31,8 @@ export class Contact {
     readonly warrantyAnswer: Locator;
     readonly paymentQuestion: Locator;
     readonly paymentAnswer: Locator;
+    //Toast
+    readonly messageSentToast: Locator;
 
 
     //The constructor initializes the elements // Locate the elements
@@ -50,19 +52,23 @@ export class Contact {
         this.messageTextbox = page.getByRole('textbox', { name: 'Message' });
         this.sendMessageButton = page.getByRole('button', { name: 'Envoyer le message' });
         //Section Informations
-        this.emailLink = page.getByRole('link', { name: 'Email contact@techhub.fr' });
-        this.phoneLink = page.getByRole('link', { name: 'Téléphone 01 23 45 67' });
-        this.address = page.getByText('Adresse');
-        this.supportClient = page.getByText('Support Client');
+        // Target the <a> by its href (stable) rather than by concatenated visible text.
+        // Scoped to <main> so the identical footer links are not matched.
+        this.emailLink = page.getByRole('main').locator('a[href^="mailto:"]');
+        this.phoneLink = page.getByRole('main').locator('a[href^="tel:"]');
+        this.address = page.getByText('Adresse', { exact: true });
+        this.supportClient = page.getByText('Support client', { exact: true });
         //Section Questions Fréquentes
-        this.delayQuestion = page.getByRole('button', { name: 'Quels sont les délais de' });
-        this.delayAnswer = page.getByText('La livraison standard prend 2');
+        this.delayQuestion = page.getByRole('button', { name: 'Quels sont les délais de livraison ?' });
+        this.delayAnswer = page.getByText('La livraison standard prend 2-4 jours ouvrés');
         this.productReturnQuestion = page.getByRole('button', { name: 'Comment retourner un produit ?' });
-        this.productReturnAnswer = page.getByText('Vous disposez de 30 jours');
-        this.warrantyQuestion = page.getByRole('button', { name: 'Les produits sont-ils' });
-        this.warrantyAnswer = page.getByText('Tous nos produits bénéficient');
-        this.paymentQuestion = page.getByRole('button', { name: 'Quels modes de paiement' });
-        this.paymentAnswer = page.getByText('Nous acceptons les cartes');
+        this.productReturnAnswer = page.getByText('Vous disposez de 30 jours pour retourner un produit');
+        this.warrantyQuestion = page.getByRole('button', { name: 'Les produits sont-ils garantis ?' });
+        this.warrantyAnswer = page.getByText("Tous nos produits bénéficient d'une garantie de 2 ans");
+        this.paymentQuestion = page.getByRole('button', { name: 'Quels modes de paiement acceptez-vous ?' });
+        this.paymentAnswer = page.getByText('Nous acceptons les cartes bancaires');
+        //Toast
+        this.messageSentToast = page.getByText('Message envoyé ! Nous vous répondrons sous 24h.');
 
     }
 
@@ -82,15 +88,18 @@ export class Contact {
 
     async sendMessage(fullName: string, email: string, subject: string, message: string) {
         await this.fullNameTextbox.fill(fullName);
-        await this.fullNameTextbox.fill(email);
-        await this.fullNameTextbox.fill(subject);
-        await this.fullNameTextbox.fill(message);
+        await this.emailTextbox.fill(email);
+        await this.subjectTextbox.fill(subject);
+        await this.messageTextbox.fill(message);
 
         await this.sendMessageButton.click();
     }
 
-    //    clickerEmailContact => to be done in the test file; no method needed here?
-    //    clickerTéléphoneContact => to be done in the test file; no method needed here?
+
+    // Generic accordion toggle: opens a closed FAQ item, closes an open one.
+    async toggleFAQ(question: Locator) {
+        await question.click();
+    }
 
     async viewDelayFAQ() {
         //I click on a drawer

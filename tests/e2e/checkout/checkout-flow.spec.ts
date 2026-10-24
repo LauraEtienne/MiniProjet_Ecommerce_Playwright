@@ -1,10 +1,9 @@
-import { test, expect } from './fixture';
-import users from '../tests/data/users.json'; //import du fichier
-import { PLP } from './pages/plp';
+import { test, expect } from '../../fixture';
+import users from '../../data/users.json'; //import du fichier
+import { PLP } from '../../pages/plp';
 
 test.beforeEach(async ({ page}) => {
     await page.goto(process.env.URL!);
-     waitUntil: 'networkidle'
 
 });
 

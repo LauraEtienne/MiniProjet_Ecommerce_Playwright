@@ -1,0 +1,165 @@
+- generic [active] [ref=f1e1]:
+  - generic [ref=f1e2]:
+    - region "Notifications (F8)":
+      - list
+    - region "Notifications alt+T"
+    - generic [ref=f1e3]:
+      - banner [ref=f1e4]:
+        - generic [ref=f1e6]:
+          - link "TechHub" [ref=f1e7] [cursor=pointer]:
+            - /url: /
+          - navigation [ref=f1e12]:
+            - link "Accueil" [ref=f1e13] [cursor=pointer]:
+              - /url: /
+            - link "Produits" [ref=f1e14] [cursor=pointer]:
+              - /url: /products
+            - link "À propos" [ref=f1e15] [cursor=pointer]:
+              - /url: /about
+            - link "Contact" [ref=f1e16] [cursor=pointer]:
+              - /url: /contact
+          - generic [ref=f1e17]:
+            - button [ref=f1e18] [cursor=pointer]
+            - link [ref=f1e19] [cursor=pointer]:
+              - /url: /cart
+              - button [ref=f1e20]
+            - link [ref=f1e21] [cursor=pointer]:
+              - /url: /auth
+              - button [ref=f1e22]
+      - main [ref=f1e23]:
+        - generic [ref=f1e26]:
+          - heading "Nous Contacter" [level=1] [ref=f1e27]
+          - paragraph [ref=f1e28]: Une question ? Notre équipe est là pour vous aider.
+        - generic [ref=f1e31]:
+          - generic [ref=f1e33]:
+            - heading "Envoyez-nous un message" [level=2] [ref=f1e34]
+            - generic [ref=f1e35]:
+              - generic [ref=f1e36]:
+                - generic [ref=f1e37]:
+                  - text: Nom complet
+                  - textbox "Nom complet" [ref=f1e38]
+                - generic [ref=f1e39]:
+                  - text: Email
+                  - textbox "Email" [ref=f1e40]
+              - generic [ref=f1e41]:
+                - text: Sujet
+                - textbox "Sujet" [ref=f1e42]
+              - generic [ref=f1e43]:
+                - text: Message
+                - textbox "Message" [ref=f1e44]
+              - button "Envoyer le message" [ref=f1e45] [cursor=pointer]
+          - generic [ref=f1e46]:
+            - generic [ref=f1e47]:
+              - heading "Informations" [level=2] [ref=f1e48]
+              - generic [ref=f1e49]:
+                - link [ref=f1e50] [cursor=pointer]:
+                  - /url: mailto:contact@techhub.fr
+                  - generic [ref=f1e55]:
+                    - paragraph [ref=f1e56]: Email
+                    - paragraph [ref=f1e57]: contact@techhub.fr
+                - link [ref=f1e58] [cursor=pointer]:
+                  - /url: tel:+33123456789
+                  - generic [ref=f1e62]:
+                    - paragraph [ref=f1e63]: Téléphone
+                    - paragraph [ref=f1e64]: 01 23 45 67 89
+                - generic [ref=f1e70]:
+                  - paragraph [ref=f1e71]: Adresse
+                  - paragraph [ref=f1e72]: 123 Avenue Tech, 75001 Paris
+                - generic [ref=f1e77]:
+                  - paragraph [ref=f1e78]: Support client
+                  - paragraph [ref=f1e79]: "Lun-Ven : 9h-18h"
+            - generic [ref=f1e80]:
+              - heading "Questions fréquentes" [level=2] [ref=f1e81]
+              - generic [ref=f1e82]:
+                - button "Quels sont les délais de livraison ?" [ref=f1e84] [cursor=pointer]
+                - button "Comment retourner un produit ?" [ref=f1e89] [cursor=pointer]
+                - button "Les produits sont-ils garantis ?" [ref=f1e94] [cursor=pointer]
+                - button "Quels modes de paiement acceptez-vous ?" [ref=f1e99] [cursor=pointer]
+      - contentinfo [ref=f1e103]:
+        - generic [ref=f1e104]:
+          - generic [ref=f1e105]:
+            - generic [ref=f1e106]:
+              - link "TechHub" [ref=f1e107] [cursor=pointer]:
+                - /url: /
+              - paragraph [ref=f1e112]: La technologie qui simplifie votre quotidien. Découvrez les meilleurs produits tech sélectionnés par nos experts.
+              - generic [ref=f1e113]:
+                - link "Facebook" [ref=f1e114] [cursor=pointer]:
+                  - /url: "#"
+                - link "Twitter" [ref=f1e117] [cursor=pointer]:
+                  - /url: "#"
+                - link "Instagram" [ref=f1e120] [cursor=pointer]:
+                  - /url: "#"
+                - link "LinkedIn" [ref=f1e124] [cursor=pointer]:
+                  - /url: "#"
+            - generic [ref=f1e129]:
+              - heading "Produits" [level=4] [ref=f1e130]
+              - list [ref=f1e131]:
+                - listitem [ref=f1e132]:
+                  - link "Accessoires" [ref=f1e133] [cursor=pointer]:
+                    - /url: /products?category=accessories
+                - listitem [ref=f1e134]:
+                  - link "Maison Connectée" [ref=f1e135] [cursor=pointer]:
+                    - /url: /products?category=smart-home
+                - listitem [ref=f1e136]:
+                  - link "Gaming" [ref=f1e137] [cursor=pointer]:
+                    - /url: /products?category=gaming
+                - listitem [ref=f1e138]:
+                  - link "Bureau" [ref=f1e139] [cursor=pointer]:
+                    - /url: /products?category=office
+            - generic [ref=f1e140]:
+              - heading "Entreprise" [level=4] [ref=f1e141]
+              - list [ref=f1e142]:
+                - listitem [ref=f1e143]:
+                  - link "À propos" [ref=f1e144] [cursor=pointer]:
+                    - /url: /about
+                - listitem [ref=f1e145]:
+                  - link "Carrières" [ref=f1e146] [cursor=pointer]:
+                    - /url: /contact
+                - listitem [ref=f1e147]:
+                  - link "Presse" [ref=f1e148] [cursor=pointer]:
+                    - /url: /contact
+                - listitem [ref=f1e149]:
+                  - link "Blog" [ref=f1e150] [cursor=pointer]:
+                    - /url: /contact
+            - generic [ref=f1e151]:
+              - heading "Support" [level=4] [ref=f1e152]
+              - list [ref=f1e153]:
+                - listitem [ref=f1e154]:
+                  - link "Contact" [ref=f1e155] [cursor=pointer]:
+                    - /url: /contact
+                - listitem [ref=f1e156]:
+                  - link "FAQ" [ref=f1e157] [cursor=pointer]:
+                    - /url: /contact#faq
+                - listitem [ref=f1e158]:
+                  - link "Livraison" [ref=f1e159] [cursor=pointer]:
+                    - /url: /contact
+                - listitem [ref=f1e160]:
+                  - link "Retours" [ref=f1e161] [cursor=pointer]:
+                    - /url: /contact
+            - generic [ref=f1e162]:
+              - heading "Légal" [level=4] [ref=f1e163]
+              - list [ref=f1e164]:
+                - listitem [ref=f1e165]:
+                  - link "CGV" [ref=f1e166] [cursor=pointer]:
+                    - /url: /contact
+                - listitem [ref=f1e167]:
+                  - link "Confidentialité" [ref=f1e168] [cursor=pointer]:
+                    - /url: /contact
+                - listitem [ref=f1e169]:
+                  - link "Cookies" [ref=f1e170] [cursor=pointer]:
+                    - /url: /contact
+                - listitem [ref=f1e171]:
+                  - link "Mentions légales" [ref=f1e172] [cursor=pointer]:
+                    - /url: /contact
+          - generic [ref=f1e173]:
+            - generic [ref=f1e174]:
+              - link "contact@techhub.fr" [ref=f1e175] [cursor=pointer]:
+                - /url: mailto:contact@techhub.fr
+              - link "01 23 45 67 89" [ref=f1e179] [cursor=pointer]:
+                - /url: tel:+33123456789
+              - generic [ref=f1e182]: Paris, France
+            - paragraph [ref=f1e186]: © 2026 TechHub. Tous droits réservés.
+  - complementary "Edit with Lovable" [ref=f1e187]:
+    - link "Edit with Lovable" [ref=f1e188] [cursor=pointer]:
+      - /url: https://lovable.dev/projects/lovp_0rewj1v2fv99a9r25rp0m5e892?utm_source=lovable-badge
+      - generic [ref=f1e189]: Edit with
+    - button "Dismiss" [ref=f1e195] [cursor=pointer]

@@ -1,5 +1,5 @@
-import { test, expect } from '../fixture';
-import users from '../data/users.json'; //import du fichier
+import { test, expect } from '../../fixture';
+import users from '../../data/users.json'; //import du fichier
 
 test.beforeEach(async ({ page }) => {
         await page.goto(process.env.URL!);
