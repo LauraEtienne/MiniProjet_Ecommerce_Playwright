@@ -63,7 +63,13 @@ npx playwright show-report     # HTML report
 
 ## Known limitations and next steps
 
-This project is a work in progress. Planned improvements:
+This project is a work in progress.
+
+**Known issue:**
+
+- The registration test is occasionally flaky on the live demo site (account name not always displayed right after creation); it passes on retry in CI
+
+**Planned improvements:**
 
 - Negative and edge cases on the checkout (empty fields, invalid card)
 - Cart content assertions (product, quantity, total)
