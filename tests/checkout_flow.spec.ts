@@ -4,7 +4,6 @@ import { PLP } from './pages/plp';
 
 test.beforeEach(async ({ page}) => {
     await page.goto(process.env.URL!);
-     waitUntil: 'networkidle'
 
 });
 

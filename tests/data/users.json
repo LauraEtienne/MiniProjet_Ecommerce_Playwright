@@ -10,7 +10,7 @@
   "postalCode": "12345",
   "cardNumber": "4111 1111 1111 1111",
   "cardName": "Test Aqua",
-  "expirationDate": "2026/12/01",
+  "expirationDate": "2030/12/01",
   "CVV": "123"
   },
   "authentifiCheckout" :  {
@@ -24,7 +24,7 @@
   "postalCode": "12345",
   "cardNumber": "4111 1111 1111 1111",
   "cardName": "Test Aqua",
-  "expirationDate": "2026/12/01",
+  "expirationDate": "2030/12/01",
   "CVV": "123"
   }
 }
