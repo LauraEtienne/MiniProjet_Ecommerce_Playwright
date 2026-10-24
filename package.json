@@ -6,9 +6,7 @@
     "authentication": "npx playwright test authentication.spec.ts",
     "inscription": "npx playwright test inscription.spec.ts",
     "checkout_flow": "npx playwright test checkout_flow.spec.ts",
-    "test:report": "npx playwright test --reporter=html",
-    "send:report": "node send-report.js",
-    "test:full": "npx playwright test; node send-report.js"
+    "test:report": "npx playwright test --reporter=html"
   },
   "keywords": [],
   "author": "",
