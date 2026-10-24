@@ -9,6 +9,7 @@ node_modules/
 .env*
 allure-report/
 allure-results/
+.playwright-cli/
 # Décommentez si .mcp.json contient des variables propres à votre machine
 .mcp.json
 
