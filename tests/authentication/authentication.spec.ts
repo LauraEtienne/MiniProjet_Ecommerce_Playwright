@@ -3,7 +3,6 @@ import users from '../data/users.json'; //import du fichier
 
 test.beforeEach(async ({ page }) => {
         await page.goto(process.env.URL!);
-        waitUntil: 'networkidle'
 });
 
 test('successful authentication', async ({ page, browsing, authenticationPage: authentificationPage, accountPage }) => {
