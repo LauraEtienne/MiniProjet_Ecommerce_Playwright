@@ -1,0 +1,283 @@
+- generic [active] [ref=f1e1]:
+  - generic [ref=f1e2]:
+    - region "Notifications (F8)":
+      - list
+    - region "Notifications alt+T"
+    - generic [ref=f1e3]:
+      - banner [ref=f1e4]:
+        - generic [ref=f1e6]:
+          - link "TechHub" [ref=f1e7] [cursor=pointer]:
+            - /url: /
+          - navigation [ref=f1e12]:
+            - link "Accueil" [ref=f1e13] [cursor=pointer]:
+              - /url: /
+            - link "Produits" [ref=f1e14] [cursor=pointer]:
+              - /url: /products
+            - link "À propos" [ref=f1e15] [cursor=pointer]:
+              - /url: /about
+            - link "Contact" [ref=f1e16] [cursor=pointer]:
+              - /url: /contact
+          - generic [ref=f1e17]:
+            - button [ref=f1e18] [cursor=pointer]
+            - link [ref=f1e19] [cursor=pointer]:
+              - /url: /cart
+              - button [ref=f1e20]
+            - link [ref=f1e21] [cursor=pointer]:
+              - /url: /auth
+              - button [ref=f1e22]
+      - main [ref=f1e23]:
+        - generic [ref=f1e26]:
+          - heading "Notre Catalogue" [level=1] [ref=f1e27]
+          - paragraph [ref=f1e28]: Découvrez notre sélection complète de produits tech innovants.
+        - generic [ref=f1e30]:
+          - generic [ref=f1e31]:
+            - generic [ref=f1e32]:
+              - button "Filtres" [ref=f1e33] [cursor=pointer]
+              - paragraph [ref=f1e34]: 12 produits
+            - generic [ref=f1e35]:
+              - combobox [ref=f1e37]:
+                - option "Nouveautés" [selected]
+                - option "Popularité"
+                - option "Prix croissant"
+                - option "Prix décroissant"
+              - generic [ref=f1e38]:
+                - button [ref=f1e39] [cursor=pointer]
+                - button [ref=f1e40] [cursor=pointer]
+          - generic [ref=f1e41]:
+            - link "Écouteurs Sans Fil Pro Nouveau -20% Accessoires Écouteurs Sans Fil Pro (1247) 199.99 € 249.99 €" [ref=f1e43] [cursor=pointer]:
+              - /url: /product/1
+              - generic [ref=f1e44]:
+                - generic [ref=f1e45]:
+                  - img "Écouteurs Sans Fil Pro" [ref=f1e46]
+                  - generic [ref=f1e47]:
+                    - generic [ref=f1e48]: Nouveau
+                    - generic [ref=f1e51]: "-20%"
+                  - button [ref=f1e53]
+                - generic [ref=f1e54]:
+                  - paragraph [ref=f1e55]: Accessoires
+                  - heading "Écouteurs Sans Fil Pro" [level=3] [ref=f1e56]
+                  - generic [ref=f1e57]: (1247)
+                  - generic [ref=f1e70]:
+                    - generic [ref=f1e71]: 199.99 €
+                    - generic [ref=f1e72]: 249.99 €
+            - link "Lampe Bureau Intelligente Nouveau Maison Connectée Lampe Bureau Intelligente (456) 149.99 €" [ref=f1e74] [cursor=pointer]:
+              - /url: /product/3
+              - generic [ref=f1e75]:
+                - generic [ref=f1e76]:
+                  - img "Lampe Bureau Intelligente" [ref=f1e77]
+                  - generic [ref=f1e78]: Nouveau
+                  - button [ref=f1e83]
+                - generic [ref=f1e84]:
+                  - paragraph [ref=f1e85]: Maison Connectée
+                  - heading "Lampe Bureau Intelligente" [level=3] [ref=f1e86]
+                  - generic [ref=f1e87]: (456)
+                  - generic [ref=f1e100]: 149.99 €
+            - link "Souris Gaming Elite Nouveau Gaming Souris Gaming Elite (1567) 129.99 €" [ref=f1e103] [cursor=pointer]:
+              - /url: /product/8
+              - generic [ref=f1e104]:
+                - generic [ref=f1e105]:
+                  - img "Souris Gaming Elite" [ref=f1e106]
+                  - generic [ref=f1e107]: Nouveau
+                  - button [ref=f1e112]
+                - generic [ref=f1e113]:
+                  - paragraph [ref=f1e114]: Gaming
+                  - heading "Souris Gaming Elite" [level=3] [ref=f1e115]
+                  - generic [ref=f1e116]: (1567)
+                  - generic [ref=f1e129]: 129.99 €
+            - link "Casque VR Gaming Nouveau Gaming Casque VR Gaming (234) 449.99 € Rupture de stock" [ref=f1e132] [cursor=pointer]:
+              - /url: /product/12
+              - generic [ref=f1e133]:
+                - generic [ref=f1e134]:
+                  - img "Casque VR Gaming" [ref=f1e135]
+                  - generic [ref=f1e136]: Nouveau
+                  - generic [ref=f1e140]:
+                    - button [disabled]
+                - generic [ref=f1e141]:
+                  - paragraph [ref=f1e142]: Gaming
+                  - heading "Casque VR Gaming" [level=3] [ref=f1e143]
+                  - generic [ref=f1e144]: (234)
+                  - generic [ref=f1e157]: 449.99 €
+                  - paragraph [ref=f1e159]: Rupture de stock
+            - link "Hub USB-C 12-en-1 Accessoires Hub USB-C 12-en-1 (823) 89.99 €" [ref=f1e161] [cursor=pointer]:
+              - /url: /product/2
+              - generic [ref=f1e162]:
+                - generic [ref=f1e163]:
+                  - img "Hub USB-C 12-en-1" [ref=f1e164]
+                  - button [ref=f1e166]
+                - generic [ref=f1e167]:
+                  - paragraph [ref=f1e168]: Accessoires
+                  - heading "Hub USB-C 12-en-1" [level=3] [ref=f1e169]
+                  - generic [ref=f1e170]: (823)
+                  - generic [ref=f1e183]: 89.99 €
+            - link "Clavier Mécanique RGB -18% Gaming Clavier Mécanique RGB (2103) 179.99 € 219.99 €" [ref=f1e186] [cursor=pointer]:
+              - /url: /product/4
+              - generic [ref=f1e187]:
+                - generic [ref=f1e188]:
+                  - img "Clavier Mécanique RGB" [ref=f1e189]
+                  - generic [ref=f1e190]: "-18%"
+                  - button [ref=f1e193]
+                - generic [ref=f1e194]:
+                  - paragraph [ref=f1e195]: Gaming
+                  - heading "Clavier Mécanique RGB" [level=3] [ref=f1e196]
+                  - generic [ref=f1e197]: (2103)
+                  - generic [ref=f1e210]:
+                    - generic [ref=f1e211]: 179.99 €
+                    - generic [ref=f1e212]: 219.99 €
+            - link "Webcam 4K Pro Stream Bureau Webcam 4K Pro Stream (678) 199.99 €" [ref=f1e214] [cursor=pointer]:
+              - /url: /product/5
+              - generic [ref=f1e215]:
+                - generic [ref=f1e216]:
+                  - img "Webcam 4K Pro Stream" [ref=f1e217]
+                  - button [ref=f1e219]
+                - generic [ref=f1e220]:
+                  - paragraph [ref=f1e221]: Bureau
+                  - heading "Webcam 4K Pro Stream" [level=3] [ref=f1e222]
+                  - generic [ref=f1e223]: (678)
+                  - generic [ref=f1e236]: 199.99 €
+            - link "Station de Charge Qi Accessoires Station de Charge Qi (892) 79.99 €" [ref=f1e239] [cursor=pointer]:
+              - /url: /product/6
+              - generic [ref=f1e240]:
+                - generic [ref=f1e241]:
+                  - img "Station de Charge Qi" [ref=f1e242]
+                  - button [ref=f1e244]
+                - generic [ref=f1e245]:
+                  - paragraph [ref=f1e246]: Accessoires
+                  - heading "Station de Charge Qi" [level=3] [ref=f1e247]
+                  - generic [ref=f1e248]: (892)
+                  - generic [ref=f1e261]: 79.99 €
+            - link "Thermostat Connecté Pro Maison Connectée Thermostat Connecté Pro (534) 249.99 €" [ref=f1e264] [cursor=pointer]:
+              - /url: /product/7
+              - generic [ref=f1e265]:
+                - generic [ref=f1e266]:
+                  - img "Thermostat Connecté Pro" [ref=f1e267]
+                  - button [ref=f1e269]
+                - generic [ref=f1e270]:
+                  - paragraph [ref=f1e271]: Maison Connectée
+                  - heading "Thermostat Connecté Pro" [level=3] [ref=f1e272]
+                  - generic [ref=f1e273]: (534)
+                  - generic [ref=f1e286]: 249.99 €
+            - link "Support Écran Ergonomique Bureau Support Écran Ergonomique (423) 119.99 €" [ref=f1e289] [cursor=pointer]:
+              - /url: /product/9
+              - generic [ref=f1e290]:
+                - generic [ref=f1e291]:
+                  - img "Support Écran Ergonomique" [ref=f1e292]
+                  - button [ref=f1e294]
+                - generic [ref=f1e295]:
+                  - paragraph [ref=f1e296]: Bureau
+                  - heading "Support Écran Ergonomique" [level=3] [ref=f1e297]
+                  - generic [ref=f1e298]: (423)
+                  - generic [ref=f1e311]: 119.99 €
+            - link "Enceinte Portable 360 -16% Accessoires Enceinte Portable 360 (756) 159.99 € 189.99 €" [ref=f1e314] [cursor=pointer]:
+              - /url: /product/10
+              - generic [ref=f1e315]:
+                - generic [ref=f1e316]:
+                  - img "Enceinte Portable 360" [ref=f1e317]
+                  - generic [ref=f1e318]: "-16%"
+                  - button [ref=f1e321]
+                - generic [ref=f1e322]:
+                  - paragraph [ref=f1e323]: Accessoires
+                  - heading "Enceinte Portable 360" [level=3] [ref=f1e324]
+                  - generic [ref=f1e325]: (756)
+                  - generic [ref=f1e338]:
+                    - generic [ref=f1e339]: 159.99 €
+                    - generic [ref=f1e340]: 189.99 €
+            - link "Caméra Sécurité Outdoor Maison Connectée Caméra Sécurité Outdoor (389) 179.99 €" [ref=f1e342] [cursor=pointer]:
+              - /url: /product/11
+              - generic [ref=f1e343]:
+                - generic [ref=f1e344]:
+                  - img "Caméra Sécurité Outdoor" [ref=f1e345]
+                  - button [ref=f1e347]
+                - generic [ref=f1e348]:
+                  - paragraph [ref=f1e349]: Maison Connectée
+                  - heading "Caméra Sécurité Outdoor" [level=3] [ref=f1e350]
+                  - generic [ref=f1e351]: (389)
+                  - generic [ref=f1e364]: 179.99 €
+      - contentinfo [ref=f1e366]:
+        - generic [ref=f1e367]:
+          - generic [ref=f1e368]:
+            - generic [ref=f1e369]:
+              - link "TechHub" [ref=f1e370] [cursor=pointer]:
+                - /url: /
+              - paragraph [ref=f1e375]: La technologie qui simplifie votre quotidien. Découvrez les meilleurs produits tech sélectionnés par nos experts.
+              - generic [ref=f1e376]:
+                - link "Facebook" [ref=f1e377] [cursor=pointer]:
+                  - /url: "#"
+                - link "Twitter" [ref=f1e380] [cursor=pointer]:
+                  - /url: "#"
+                - link "Instagram" [ref=f1e383] [cursor=pointer]:
+                  - /url: "#"
+                - link "LinkedIn" [ref=f1e387] [cursor=pointer]:
+                  - /url: "#"
+            - generic [ref=f1e392]:
+              - heading "Produits" [level=4] [ref=f1e393]
+              - list [ref=f1e394]:
+                - listitem [ref=f1e395]:
+                  - link "Accessoires" [ref=f1e396] [cursor=pointer]:
+                    - /url: /products?category=accessories
+                - listitem [ref=f1e397]:
+                  - link "Maison Connectée" [ref=f1e398] [cursor=pointer]:
+                    - /url: /products?category=smart-home
+                - listitem [ref=f1e399]:
+                  - link "Gaming" [ref=f1e400] [cursor=pointer]:
+                    - /url: /products?category=gaming
+                - listitem [ref=f1e401]:
+                  - link "Bureau" [ref=f1e402] [cursor=pointer]:
+                    - /url: /products?category=office
+            - generic [ref=f1e403]:
+              - heading "Entreprise" [level=4] [ref=f1e404]
+              - list [ref=f1e405]:
+                - listitem [ref=f1e406]:
+                  - link "À propos" [ref=f1e407] [cursor=pointer]:
+                    - /url: /about
+                - listitem [ref=f1e408]:
+                  - link "Carrières" [ref=f1e409] [cursor=pointer]:
+                    - /url: /products
+                - listitem [ref=f1e410]:
+                  - link "Presse" [ref=f1e411] [cursor=pointer]:
+                    - /url: /products
+                - listitem [ref=f1e412]:
+                  - link "Blog" [ref=f1e413] [cursor=pointer]:
+                    - /url: /products
+            - generic [ref=f1e414]:
+              - heading "Support" [level=4] [ref=f1e415]
+              - list [ref=f1e416]:
+                - listitem [ref=f1e417]:
+                  - link "Contact" [ref=f1e418] [cursor=pointer]:
+                    - /url: /contact
+                - listitem [ref=f1e419]:
+                  - link "FAQ" [ref=f1e420] [cursor=pointer]:
+                    - /url: /contact#faq
+                - listitem [ref=f1e421]:
+                  - link "Livraison" [ref=f1e422] [cursor=pointer]:
+                    - /url: /products
+                - listitem [ref=f1e423]:
+                  - link "Retours" [ref=f1e424] [cursor=pointer]:
+                    - /url: /products
+            - generic [ref=f1e425]:
+              - heading "Légal" [level=4] [ref=f1e426]
+              - list [ref=f1e427]:
+                - listitem [ref=f1e428]:
+                  - link "CGV" [ref=f1e429] [cursor=pointer]:
+                    - /url: /products
+                - listitem [ref=f1e430]:
+                  - link "Confidentialité" [ref=f1e431] [cursor=pointer]:
+                    - /url: /products
+                - listitem [ref=f1e432]:
+                  - link "Cookies" [ref=f1e433] [cursor=pointer]:
+                    - /url: /products
+                - listitem [ref=f1e434]:
+                  - link "Mentions légales" [ref=f1e435] [cursor=pointer]:
+                    - /url: /products
+          - generic [ref=f1e436]:
+            - generic [ref=f1e437]:
+              - link "contact@techhub.fr" [ref=f1e438] [cursor=pointer]:
+                - /url: mailto:contact@techhub.fr
+              - link "01 23 45 67 89" [ref=f1e442] [cursor=pointer]:
+                - /url: tel:+33123456789
+              - generic [ref=f1e445]: Paris, France
+            - paragraph [ref=f1e449]: © 2026 TechHub. Tous droits réservés.
+  - complementary "Edit with Lovable" [ref=f1e450]:
+    - link "Edit with Lovable" [ref=f1e451] [cursor=pointer]:
+      - /url: https://lovable.dev/projects/lovp_0rewj1v2fv99a9r25rp0m5e892?utm_source=lovable-badge
+      - generic [ref=f1e452]: Edit with
+    - button "Dismiss" [ref=f1e458] [cursor=pointer]
