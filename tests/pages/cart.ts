@@ -1,5 +1,4 @@
 import { Page, Locator } from '@playwright/test';
-import { test, expect } from '@playwright/test';
 //import { fakerFR as faker } from '@faker-js/faker';
 
 // Define the Page object and elements (capitalized)
@@ -23,10 +22,24 @@ export class Cart {
         this.checkoutButton = page.getByTestId('checkout-button');
         this.continueShoppingButton = page.getByTestId('continue-shopping-button');
         this.cartCount = page.getByTestId('cart-count');
+        
   
     }
 
     //methods
+    //Locate the quantity of a product
+    getProductQuantity (productId: number):Locator {
+        const productQuantityLocator = this.page.getByTestId(`quantity-${productId}`);
+        return productQuantityLocator;
+    }
+
+    //Locate the name of the selected product
+    getProductName (productName: string):Locator {
+        const productNameLocator = this.page.getByRole('link', { name: productName }).filter({hasText: productName});
+        return productNameLocator;
+    }
+
+
     // Increase product quantity
     async increaseProductQuantity (productId: string) {
         await this.page.getByTestId('increase-quantity-${productId}')

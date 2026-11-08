@@ -1,6 +1,9 @@
 import { test, expect } from './fixture';
-import users from '../tests/data/users.json'; //import du fichier
+import users from '../tests/data/users.json'; //import users data from the JSON file
+import products from '../tests/data/products.json'; //import products data from the JSON file
 import { PLP } from './pages/plp';
+
+const selectedProduct = products.products[0]; // Select the first product from the products data
 
 test.beforeEach(async ({ page}) => {
     await page.goto(process.env.URL!);
@@ -44,8 +47,10 @@ test('The user places an order successfully', async ({ page, browsing, authentic
          //Cart must be displayed
          await expect(page).toHaveURL(/\/cart/);
          await expect(cartPage.pageTitle).toBeVisible();
-         //User check his/her cart
-         //TO BE COMPLETED -----------------------------------------
+         //Check that the name of the selected product is displayed in the cart
+         await expect(cartPage.getProductName(selectedProduct.name)).toBeVisible(); 
+         //Check that the quantity of the selected product is correct
+         await expect(cartPage.getProductQuantity(selectedProduct.id)).toHaveText('1');
         
          });
 
