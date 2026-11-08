@@ -51,7 +51,8 @@ test('The user places an order successfully', async ({ page, browsing, authentic
          await expect(cartPage.getProductName(selectedProduct.name)).toBeVisible(); 
          //Check that the quantity of the selected product is correct
          await expect(cartPage.getProductQuantity(selectedProduct.id)).toHaveText('1');
-        
+         //Check that the price of the selected product is correct
+         await expect(cartPage.getProductPrice(selectedProduct.price)).toBeVisible();  
          });
 
 

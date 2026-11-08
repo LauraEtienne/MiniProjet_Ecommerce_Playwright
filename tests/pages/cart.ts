@@ -39,6 +39,12 @@ export class Cart {
         return productNameLocator;
     }
 
+    //Locate the price of the selected product
+    getProductPrice (productPrice: number):Locator {
+        const productPriceLocator = this.page.getByText('€ / unité').filter({hasText: productPrice.toString()});
+        return productPriceLocator;
+    }
+
 
     // Increase product quantity
     async increaseProductQuantity (productId: string) {
